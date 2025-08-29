@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Databases & SQL Notes</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 950px;
+      background: #f4f6f8;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    nav {
+      background: #2980b9;
+      color: white;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+    }
+
+    nav h2 {
+      margin-top: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    nav li {
+      margin: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+    }
+
+    button {
+      margin: 15px 8px;
+      padding: 12px 24px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #3498db;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.9em;
+      margin: 60px 0 20px;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode h1 {
+      color: #ecf0f1;
+      border-color: #3498db;
+    }
+
+    body.dark-mode h2 {
+      color: #3498db;
+    }
+
+    body.dark-mode nav {
+      background: #333;
+    }
+
+    body.dark-mode nav a {
+      color: #aad;
+    }
+
+    body.dark-mode section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    @media(max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      button {
+        display: none;
+      }
+
+      nav {
+        background: none;
+        color: black;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Databases & SQL Notes</h1>
+
+  <nav>
+    <h2>Navigation</h2>
+    <ul>
+      <li><a href="#intro">Introduction to Databases</a></li>
+      <li><a href="#sql">SQL Basics</a></li>
+      <li><a href="#nosql">NoSQL Concepts</a></li>
+      <li><a href="#managed">Managed Database Services</a></li>
+    </ul>
+  </nav>
+
+  <button onclick="window.print()">Download/Print PDF</button>
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+
+  <section id="intro">
+    <h2>Introduction to Databases</h2>
+    <p>A database is an organized collection of structured information or data, stored electronically in a computer system. Databases make it easy to store, retrieve, update, and manage information efficiently.</p>
+    <ul>
+      <li>Used in almost every modern application.</li>
+      <li>Helps store user data, transactions, logs, or inventory.</li>
+      <li>Examples: customer info, sales records, employee data.</li>
+      <li>Two main types: relational and non-relational.</li>
+      <li>Managed by Database Management Systems (DBMS) like MySQL, PostgreSQL, MongoDB.</li>
+    </ul>
+  </section>
+
+  <section id="sql">
+    <h2>SQL Basics</h2>
+    <p>SQL (Structured Query Language) is the standard programming language for managing and manipulating relational databases.</p>
+    <ul>
+      <li>Used to create and manage tables and data.</li>
+      <li>Performs tasks like SELECT, INSERT, UPDATE, DELETE.</li>
+      <li>Uses statements and queries to retrieve data.</li>
+      <li>Supports data integrity and relationships with keys.</li>
+      <li>Popular SQL DBMS: MySQL, PostgreSQL, Oracle, SQL Server.</li>
+    </ul>
+  </section>
+
+  <section id="nosql">
+    <h2>NoSQL Concepts</h2>
+    <p>NoSQL databases are non-relational and handle unstructured or semi-structured data. They’re designed for flexibility, scalability, and big data needs.</p>
+    <ul>
+      <li>Examples: MongoDB, CouchDB, Firebase, Cassandra.</li>
+      <li>Great for real-time web apps and IoT.</li>
+      <li>Use JSON-like or document structures.</li>
+      <li>Do not require fixed schemas like SQL.</li>
+      <li>Popular for fast-changing data and massive scale.</li>
+    </ul>
+  </section>
+
+  <section id="managed">
+    <h2>Managed Database Services</h2>
+    <p>Managed database services provide fully managed infrastructure, backups, and security, so developers focus on building apps instead of maintaining servers.</p>
+    <ul>
+      <li>Examples: Amazon RDS, Google Cloud SQL, Azure SQL Database.</li>
+      <li>Automatic backups and replication.</li>
+      <li>Built-in monitoring and scaling tools.</li>
+      <li>Good for businesses needing high reliability.</li>
+      <li>Save time, reduce manual server management.</li>
+    </ul>
+  </section>
+
+  <footer>&copy; 2025 Databases & SQL Notes | All rights reserved.</footer>
+
+</body>
+</html>

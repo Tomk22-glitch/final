@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Photoshop Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0 auto;
+      max-width: 900px;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #2980b9;
+      margin-top: 30px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    img {
+      display: block;
+      margin: 20px auto;
+      width: 120px;
+      height: auto;
+    }
+    nav {
+      background: #2980b9;
+      color: #fff;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+    }
+    nav h2 {
+      color: #fff;
+      margin-top: 0;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav li {
+      margin: 8px 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      font-size: 0.9em;
+      color: #555;
+    }
+    iframe {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+    }
+    button {
+      display: inline-block;
+      margin: 10px 5px;
+      padding: 10px 20px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #3498db;
+    }
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #2980b9;
+      width: 0%;
+      z-index: 9999;
+    }
+    .dark-mode {
+      background: linear-gradient(135deg, #1c1c1c, #121212);
+      color: #eee;
+    }
+    .dark-mode h1 {
+      color: #ecf0f1;
+      border-color: #3498db;
+    }
+    .dark-mode h2 {
+      color: #3498db;
+    }
+    .dark-mode nav {
+      background: #444;
+    }
+    .dark-mode nav h2 {
+      color: #fff;
+    }
+    .dark-mode nav a {
+      color: #aad;
+    }
+    .dark-mode section {
+      background: #1e1e1e;
+      box-shadow: 0 2px 12px rgba(255,255,255,0.05);
+    }
+    @media screen and (max-width: 600px) {
+      body {
+        padding: 20px 10px;
+      }
+    }
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+      button, #progress-bar {
+        display: none;
+      }
+      nav {
+        background: none;
+        color: black;
+      }
+      nav a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png" alt="Photoshop Logo">
+
+  <h1>Photoshop Notes</h1>
+
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Light/Dark Mode</button>
+  <button onclick="window.print()">Print/Save PDF</button>
+
+  <nav>
+    <h2>📑 Table of Contents</h2>
+    <ul>
+      <li><a href="#def">1. What is Photoshop?</a></li>
+      <li><a href="#features">2. Key Features</a></li>
+      <li><a href="#workflow">3. Basic Workflow</a></li>
+      <li><a href="#shortcuts">4. Shortcuts</a></li>
+      <li><a href="#export">5. Exporting</a></li>
+      <li><a href="#applications">6. Applications</a></li>
+      <li><a href="#video">7. Video</a></li>
+    </ul>
+  </nav>
+
+  <section id="def">
+    <h2>1. What is Adobe Photoshop?</h2>
+    <ul>
+      <li>Adobe Photoshop is a leading raster graphics editor used for image editing, digital art, and design.</li>
+      <li>Essential for photographers, designers, and artists worldwide.</li>
+    </ul>
+  </section>
+
+  <section id="features">
+    <h2>2. Key Features</h2>
+    <ul>
+      <li>Layers for non-destructive editing.</li>
+      <li>Advanced selection tools (Marquee, Lasso, Quick Select).</li>
+      <li>Filters and creative effects.</li>
+      <li>Powerful retouching tools.</li>
+      <li>Adjustment layers for flexible edits.</li>
+      <li>Typography and vector tools.</li>
+    </ul>
+  </section>
+
+  <section id="workflow">
+    <h2>3. Basic Workflow</h2>
+    <ul>
+      <li>Open or create a new document.</li>
+      <li>Organize with layers and groups.</li>
+      <li>Make precise selections.</li>
+      <li>Edit with tools and brushes.</li>
+      <li>Apply adjustments and effects.</li>
+      <li>Save as PSD and export as needed.</li>
+    </ul>
+  </section>
+
+  <section id="shortcuts">
+    <h2>4. Essential Shortcuts</h2>
+    <ul>
+      <li>Undo: Ctrl+Z</li>
+      <li>Redo: Ctrl+Shift+Z</li>
+      <li>Zoom: Ctrl + / -</li>
+      <li>Duplicate Layer: Ctrl+J</li>
+      <li>Fit to Screen: Ctrl+0</li>
+    </ul>
+  </section>
+
+  <section id="export">
+    <h2>5. Exporting Files</h2>
+    <ul>
+      <li>Save as PSD for layered edits.</li>
+      <li>Export as JPEG, PNG, or GIF.</li>
+      <li>Use Save for Web for optimized output.</li>
+    </ul>
+  </section>
+
+  <section id="applications">
+    <h2>6. Applications</h2>
+    <ul>
+      <li>Photo editing and retouching.</li>
+      <li>Designing marketing graphics.</li>
+      <li>Creating illustrations and concept art.</li>
+      <li>Web and mobile mockups.</li>
+    </ul>
+  </section>
+
+  <section id="video">
+    <h2>7. Photoshop Video Tutorial</h2>
+  </section>
+
+  <footer>© 2025 Photoshop Notes | Created by Tom</footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) {
+          sec.style.opacity = '1';
+          sec.style.transform = 'translateY(0)';
+        }
+      });
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("progress-bar").style.width = scrolled + "%";
+    });
+  </script>
+</body>
+</html>

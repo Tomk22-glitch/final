@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Web Development Notes</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 950px;
+      background: #f4f6f8;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    nav {
+      background: #2980b9;
+      color: white;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+    }
+
+    nav h2 {
+      margin-top: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    nav li {
+      margin: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      transition: all 0.6s ease-out;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    iframe {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+    }
+
+    button {
+      margin: 15px 8px;
+      padding: 12px 24px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #3498db;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.9em;
+      margin: 60px 0 20px;
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #2980b9;
+      width: 0%;
+      z-index: 9999;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode h1 {
+      color: #ecf0f1;
+      border-color: #3498db;
+    }
+
+    body.dark-mode h2 {
+      color: #3498db;
+    }
+
+    body.dark-mode nav {
+      background: #333;
+    }
+
+    body.dark-mode nav a {
+      color: #aad;
+    }
+
+    body.dark-mode section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    @media(max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      button,
+      #progress-bar {
+        display: none;
+      }
+
+      nav {
+        background: none;
+        color: black;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <h1>Web Development Notes</h1>
+
+  <button onclick="window.print()">Download PDF</button>
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+
+  <nav>
+    <h2>Quick Links</h2>
+    <ul>
+      <li><a href="#understanding">Understanding Websites</a></li>
+      <li><a href="#languages">Web Languages</a></li>
+      <li><a href="#tools">Tools & Software</a></li>
+      <li><a href="#types">Types & Purposes</a></li>
+      <li><a href="#html-css">HTML & CSS</a></li>
+
+    </ul>
+  </nav>
+
+  <section id="understanding">
+    <h2>Understanding Websites</h2>
+    <p>Websites are collections of web pages hosted on a server, accessible via the Internet. They present information, services, or interactive platforms for users worldwide.</p>
+    <ul>
+      <li>Provide access to text, images, videos, and applications.</li>
+      <li>Each site has a unique domain name (e.g., www.example.com).</li>
+      <li>Content is delivered using web servers and web browsers.</li>
+      <li>Can be static (unchanging) or dynamic (interactive and updated in real-time).</li>
+      <li>Used for business, education, entertainment, or personal branding.</li>
+    </ul>
+  </section>
+
+  <section id="languages">
+    <h2>Web Languages</h2>
+    <p>Websites are built using various programming languages that structure, style, and add functionality.</p>
+    <ul>
+      <li>HTML defines page structure and content.</li>
+      <li>CSS styles the appearance, layout, and design.</li>
+      <li>JavaScript adds interactivity and dynamic features.</li>
+      <li>PHP, Python, or Node.js handle server-side operations.</li>
+      <li>SQL manages databases and data queries.</li>
+    </ul>
+  </section>
+
+  <section id="tools">
+    <h2>Tools & Software</h2>
+    <p>Developers use specialized software and services to build, test, and deploy websites efficiently.</p>
+    <ul>
+      <li>Text editors like VS Code, Sublime Text, or Atom.</li>
+      <li>IDEs like WebStorm for advanced development.</li>
+      <li>Graphics tools like Figma or Canva for design.</li>
+      <li>Version control tools like Git and GitHub.</li>
+      <li>Web hosting services like Netlify or Vercel.</li>
+    </ul>
+  </section>
+
+  <section id="types">
+    <h2>Types & Purposes of Websites</h2>
+    <p>Websites vary greatly in their use cases and target audiences.</p>
+    <ul>
+      <li>Business sites promote products and services.</li>
+      <li>E-commerce sites handle online sales and payments.</li>
+      <li>Blogs and portfolios showcase ideas and work.</li>
+      <li>Educational sites offer courses and resources.</li>
+      <li>Social platforms connect users globally.</li>
+    </ul>
+  </section>
+
+  <section id="html-css">
+  <h2>HTML & CSS Fundamentals</h2>
+  <p>HTML (HyperText Markup Language) and CSS (Cascading Style Sheets) form the backbone of all modern websites. Together, they define the content and visual presentation of web pages.</p>
+
+  <h3>What is HTML?</h3>
+  <ul>
+    <li>HTML provides the structure and content of a webpage.</li>
+    <li>It uses elements and tags like &lt;head&gt;, &lt;body&gt;, &lt;h1&gt;, &lt;p&gt;, &lt;div&gt; to organize text, media, and layout.</li>
+    <li>Attributes add extra details, e.g., links (&lt;a href="..."&gt;), images (&lt;img src="..."&gt;).</li>
+    <li>HTML5 introduced semantic elements: &lt;header&gt;, &lt;footer&gt;, &lt;article&gt;, &lt;section&gt; for clearer structure.</li>
+    <li>Forms collect user input: &lt;form&gt;, &lt;input&gt;, &lt;textarea&gt;, &lt;button&gt;.</li>
+  </ul>
+
+  <h3>What is CSS?</h3>
+  <ul>
+    <li>CSS controls the design, layout, and appearance of HTML content.</li>
+    <li>Selectors target HTML elements for styling: e.g., body { ... } or h1 { ... }.</li>
+    <li>Properties define how elements look: colors, fonts, spacing, borders, backgrounds.</li>
+    <li>Box Model: Every HTML element is a box with margins, borders, padding, and content.</li>
+    <li>Responsive design uses media queries to adapt layouts for desktops, tablets, and phones.</li>
+    <li>Modern CSS includes Flexbox and Grid for advanced layouts.</li>
+  </ul>
+
+  <h3>Best Practices</h3>
+  <ul>
+    <li>Keep HTML semantic and clean — use tags for their intended purpose.</li>
+    <li>Separate structure (HTML) from presentation (CSS).</li>
+    <li>Use external CSS files to manage styles efficiently.</li>
+    <li>Organize CSS with clear comments and logical structure.</li>
+    <li>Validate code to ensure compatibility across browsers.</li>
+  </ul>
+</section>
+
+
+  <footer>
+    &copy; © 2025 Web development Notes | Created by Tom
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrolled = (scrollTop / docHeight) * 100;
+      document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+
+    document.querySelectorAll('section').forEach((section, i) => {
+      setTimeout(() => {
+        section.style.opacity = 1;
+        section.style.transform = 'translateY(0)';
+      }, i * 200);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Operating System Notes</title>
+  <style>
+     body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.7;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 4px solid #e67e22;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #e67e22;
+      margin-top: 40px;
+    }
+    h3 {
+      color: #34495e;
+      margin-top: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    #progressContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: #ddd;
+      z-index: 1000;
+    }
+    #progressBar {
+      height: 5px;
+      background: linear-gradient(90deg, #e67e22, #f39c12);
+      width: 0%;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+    nav#toc {
+      background: #fff;
+      border-left: 4px solid #e67e22;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    #toc h3 {
+      margin-top: 0;
+    }
+    #toc ul {
+      list-style: none;
+      padding: 0;
+    }
+    #toc li {
+      margin: 8px 0;
+    }
+    #toc a {
+      color: #e67e22;
+      text-decoration: none;
+    }
+    #toc a:hover {
+      text-decoration: underline;
+    }
+    .actions {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px 10px;
+      padding: 12px 25px;
+      background: #e67e22;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    .btn:hover {
+      background: #f39c12;
+    }
+    .toggle-theme {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background: #e67e22;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body.dark {
+      background: #121212;
+      color: #ddd;
+    }
+    body.dark h1, body.dark h2 {
+      color: #f1c40f;
+    }
+    body.dark nav#toc {
+      background: #1e1e1e;
+      border-left-color: #f1c40f;
+    }
+    body.dark .card {
+      background: #1e1e1e;
+    }
+    body.dark .btn, body.dark .toggle-theme {
+      background: #f1c40f;
+      color: #000;
+    }
+    body.dark #progressContainer {
+      background: #333;
+    }
+    @media print {
+      #progressContainer, .actions, .toggle-theme {
+        display: none;
+      }
+    }
+
+
+    #progressContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: #ddd;
+      z-index: 1000;
+    }
+
+    #progressBar {
+      height: 5px;
+      background: #2980b9;
+      width: 0%;
+    }
+
+     #progressContainer,
+      button {
+        display: none;
+      }
+  </style>
+</head>
+<body>
+ <div id="progressContainer">
+    <div id="progressBar"></div>
+  </div>
+
+  
+
+  <h1>Operating System (OS) Notes</h1>
+   <nav id="toc">
+    <h3>📚 Table of Contents</h3>
+    <ul>
+      <li><a href="#intro">1. Definition</a></li>
+      <li><a href="#func">2. Functions</a></li>
+      <li><a href="#types">3. Types of Operating Systems</a></li>
+      <li><a href="#examples">4.Examples of Operating Systems </a></li>
+      <li><a href="#imp">5. Importance of Operating Systems</a></li>
+     <li><a href="#vid">5. Video</a></li>
+
+    </ul>
+  </nav>
+
+  <div class="btn-group">
+    <button id="download-btn" class="btn" onclick="window.print()">Download as PDF</button>
+    <button id="download-html" class="btn" onclick="downloadHTML()">Download as HTML</button>
+  </div>
+
+<div class="card" id="intro">
+
+  <h2>1. Definition</h2>
+  <ul>
+    <li>An Operating System (OS) is system software that manages computer hardware, software resources, and provides common services for computer programs.</li>
+    <li>Acts as an intermediary between users and hardware.</li>
+  </ul>
+  </div>
+
+ <div class="card" id="func">
+  <h2>2. Functions of an Operating System</h2>
+  <ul>
+    <li>Process Management – Handles creation, scheduling, and termination of processes.</li>
+    <li>Memory Management – Manages main memory and allocation for processes.</li>
+    <li>File System Management – Controls creation, deletion, and access of files.</li>
+    <li>Device Management – Manages input/output devices using drivers.</li>
+    <li>Security & Access Control – Protects data and system resources.</li>
+    <li>User Interface – Provides command-line or graphical interfaces for interaction.</li>
+  </ul>
+  </div>
+
+
+ <div class="card" id="types">
+  <h2>3. Types of Operating Systems</h2>
+  <ul>
+    <li>Batch Operating System – Executes batches of jobs with minimal user interaction.</li>
+    <li>Time-Sharing Operating System – Allows multiple users to use the system interactively at the same time.</li>
+    <li>Distributed Operating System – Manages a group of independent computers and makes them appear as a single system.</li>
+    <li>Embedded Operating System – Designed for embedded systems like mobile phones, ATMs, and smart appliances.</li>
+    <li>Real-Time Operating System (RTOS) – Provides quick and predictable response times, used in robotics and industrial control.</li>
+  </ul>
+  </div>
+
+
+ <div class="card" id="examples">
+  <h2>4. Examples of Operating Systems</h2>
+  <ul>
+    <li>Windows (Windows 10, 11, Server editions)</li>
+    <li>Linux (Ubuntu, Fedora, CentOS)</li>
+    <li>macOS (Apple computers)</li>
+    <li>Android (Smartphones and tablets)</li>
+    <li>iOS (Apple mobile devices)</li>
+  </ul>
+  </div>
+
+
+ <div class="card" id="imp">
+  <h2>5. Importance of Operating Systems</h2>
+  <ul>
+    <li>Ensures efficient utilization of hardware resources.</li>
+    <li>Provides a user-friendly interface for interaction.</li>
+    <li>Manages files and directories systematically.</li>
+    <li>Handles multitasking and multi-user operations.</li>
+    <li>Improves system security and access control.</li>
+  </ul>
+</div>
+
+
+ <div class="card" id="vid">
+  <h2>Learn More: OS Video</h2>
+  <iframe width="720" height="405" src="https://www.youtube.com/embed/26QPDBe-NB8" title="Operating System Explained" frameborder="0" allowfullscreen></iframe>
+</div>
+  <script>
+
+window.onscroll = function() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+
+
+    const toggleBtn = document.getElementById('dark-mode-toggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    function downloadHTML() {
+      const htmlContent = document.documentElement.outerHTML;
+      const blob = new Blob([htmlContent], { type: 'text/html' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'operating_system_notes.html';
+      link.click();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Microsoft Publisher Notes</title>
+  
+   <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.7;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 4px solid #27ae60;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #27ae60;
+      margin-top: 40px;
+    }
+    h3 {
+      color: #34495e;
+      margin-top: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    #progressContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: #ddd;
+      z-index: 1000;
+    }
+    #progressBar {
+      height: 5px;
+      background: linear-gradient(90deg, #27ae60, #2ecc71);
+      width: 0%;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+    nav#toc {
+      background: #fff;
+      border-left: 4px solid #27ae60;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    #toc h3 {
+      margin-top: 0;
+    }
+    #toc ul {
+      list-style: none;
+      padding: 0;
+    }
+    #toc li {
+      margin: 8px 0;
+    }
+    #toc a {
+      color: #27ae60;
+      text-decoration: none;
+    }
+    #toc a:hover {
+      text-decoration: underline;
+    }
+    .actions {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px 10px;
+      padding: 12px 25px;
+      background: #27ae60;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    .btn:hover {
+      background: #2ecc71;
+    }
+    .toggle-theme {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background: #27ae60;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body.dark {
+      background: #121212;
+      color: #ddd;
+    }
+    body.dark h1, body.dark h2 {
+      color: #2ecc71;
+    }
+    body.dark nav#toc {
+      background: #1e1e1e;
+      border-left-color: #2ecc71;
+    }
+    body.dark .card {
+      background: #1e1e1e;
+    }
+    body.dark .btn, body.dark .toggle-theme {
+      background: #2ecc71;
+      color: #000;
+    }
+    body.dark #progressContainer {
+      background: #333;
+    }
+    @media print {
+      #progressContainer, .actions, .toggle-theme {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progressContainer">
+    <div id="progressBar"></div>
+  </div>
+
+  <button class="toggle-theme"><i class="fas fa-adjust"></i> Dark Mode</button>
+
+  <h1>Microsoft Publisher Notes</h1>
+
+  <nav id="toc">
+    <h3>📚 Table of Contents</h3>
+    <ul>
+      <li><a href="#def">1. Definition</a></li>
+      <li><a href="#features">2. Key Features</a></li>
+      <li><a href="#uses">3. Practical Uses</a></li>
+      <li><a href="#components">4. Workspace Components</a></li>
+      <li><a href="#design">5. Design Tools</a></li>
+      <li><a href="#saving">6. Saving & Exporting</a></li>
+      <li><a href="#tips">7. Tips & Best Practices</a></li>
+       <li><a href="#video">7. Tutorial Video</a></li>
+    </ul>
+  </nav>
+
+  <div class="actions">
+    <button class="btn" id="download-html"><i class="fa fa-download"></i> Download as HTML</button>
+    <button class="btn" id="download-pdf"><i class="fa fa-file-pdf"></i> Download as PDF</button>
+  </div>
+
+  <div class="card" id="def">
+    <h2>1️⃣ Definition</h2>
+    <p><strong>Microsoft Publisher</strong> is a desktop publishing (DTP) application that focuses on creating high-quality, visually-rich publications such as brochures, flyers, newsletters, and posters with ease.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Microsoft_Office_Publisher_%282018%29.svg/1024px-Microsoft_Office_Publisher_%282018%29.svg.png" alt="Publisher Logo">
+  </div>
+
+  <div class="card" id="features">
+    <h2>2️⃣ Key Features</h2>
+    <ul>
+      <li>Pre-made templates for flyers, brochures, newsletters, business cards</li>
+      <li>Text and image placeholders for easy design</li>
+      <li>Master pages for consistent layouts</li>
+      <li>High-resolution printing support</li>
+      <li>Mail merge for personalized publications</li>
+      <li>Integration with Microsoft Office suite</li>
+    </ul>
+  </div>
+
+  <div class="card" id="uses">
+    <h2>3️⃣ Practical Uses</h2>
+    <ul>
+      <li>Designing posters and banners</li>
+      <li>Creating invitations and greeting cards</li>
+      <li>Making business cards and labels</li>
+      <li>Publishing newsletters and bulletins</li>
+      <li>Local printing and professional printing jobs</li>
+    </ul>
+  </div>
+
+  <div class="card" id="components">
+    <h2>4️⃣ Workspace Components</h2>
+    <ul>
+      <li><strong>Page Layout:</strong> Set page size, orientation, margins</li>
+      <li><strong>Master Page:</strong> Apply consistent elements across pages</li>
+      <li><strong>Text Boxes:</strong> Add and link text content</li>
+      <li><strong>Picture Frames:</strong> Insert and manage images</li>
+      <li><strong>Design Gallery:</strong> Built-in design objects and shapes</li>
+    </ul>
+    <img src="https://upload.wikimedia.org/wikipedia/en/1/1a/Microsoft_Publisher_screenshot.png" alt="Publisher Workspace Example">
+  </div>
+
+  <div class="card" id="design">
+    <h2>5️⃣ Design Tools</h2>
+    <ul>
+      <li>Pre-made color schemes & font sets</li>
+      <li>Text formatting: typography, styles, drop caps</li>
+      <li>Image editing: crop, rotate, adjust brightness</li>
+      <li>Alignment guides and gridlines</li>
+      <li>Design checker for layout issues</li>
+    </ul>
+  </div>
+
+  <div class="card" id="saving">
+    <h2>6️⃣ Saving & Exporting</h2>
+    <ul>
+      <li>Save files in .pub format for editing</li>
+      <li>Export to PDF or XPS for printing</li>
+      <li>Pack & Go Wizard for commercial printing</li>
+    </ul>
+  </div>
+
+  <div class="card" id="tips">
+    <h2>7️⃣ Tips & Best Practices</h2>
+    <ul>
+      <li>Use high-resolution images for best print quality</li>
+      <li>Keep designs simple and uncluttered</li>
+      <li>Use master pages for consistent branding</li>
+      <li>Proofread and preview before printing</li>
+      <li>Save backups to avoid data loss</li>
+    </ul>
+  </div>
+
+
+  <section id="video">
+    <video src="publisher.mp4" width="600" controls ></video>
+    </section>
+
+  <script>
+    window.onscroll = function() {
+      var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+      var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (scrollTop / scrollHeight) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+    document.querySelector('.toggle-theme').onclick = function() {
+      document.body.classList.toggle('dark');
+    };
+    document.getElementById("download-html").onclick = function() {
+      const blob = new Blob([document.documentElement.outerHTML], {type: "text/html"});
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "publisher-notes.html";
+      link.click();
+    };
+    document.getElementById("download-pdf").onclick = function() {
+      window.print();
+    };
+  </script>
+
+</body>
+</html>

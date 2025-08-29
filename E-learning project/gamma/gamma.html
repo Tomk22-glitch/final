@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gamma AI Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 900px;
+      background: #f5f7fa;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 3px solid #9b59b6;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #9b59b6;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    img {
+      display: block;
+      margin: 30px auto;
+      width: 160px;
+    }
+
+    nav {
+      background: #9b59b6;
+      color: white;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+    }
+
+    nav h2 {
+      margin-top: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    nav li {
+      margin: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      transition: all 0.6s ease-out;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    iframe {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+    }
+
+    button {
+      margin: 15px 8px;
+      padding: 12px 24px;
+      background: #9b59b6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #8e44ad;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.9em;
+      margin: 60px 0 20px;
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #9b59b6;
+      width: 0%;
+      z-index: 9999;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode h1 {
+      color: #ecf0f1;
+      border-color: #8e44ad;
+    }
+
+    body.dark-mode h2 {
+      color: #8e44ad;
+    }
+
+    body.dark-mode nav {
+      background: #333;
+    }
+
+    body.dark-mode nav a {
+      color: #aad;
+    }
+
+    body.dark-mode section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    @media(max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      button,
+      #progress-bar {
+        display: none;
+      }
+
+      nav {
+        background: none;
+        color: black;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <img src="https://seeklogo.com/images/G/gamma-logo-157D932C0D-seeklogo.com.png" alt="Gamma AI Logo">
+
+  <h1>Gamma AI Notes</h1>
+
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+  <button onclick="window.print()">Print / Save PDF</button>
+  <button onclick="downloadHTML()">Download HTML</button>
+
+  <nav>
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#intro">1. What is Gamma AI?</a></li>
+      <li><a href="#features">2. Key Capabilities</a></li>
+      <li><a href="#uses">3. Popular Use Cases</a></li>
+      <li><a href="#benefits">4. Benefits & Advantages</a></li>
+      <li><a href="#tips">5. Tips for Using Gamma AI</a></li>
+      <li><a href="#video">6. Tutorial Video</a></li>
+    </ul>
+  </nav>
+
+  <section id="intro">
+    <h2>1. What is Gamma AI?</h2>
+    <p>Gamma is an AI-powered presentation and document creation tool that helps users generate professional slide decks, web pages, and reports with minimal effort. It uses generative AI to automate layout design, text styling, and visual enhancements.</p>
+    <p>Gamma is popular for turning ideas or rough text into polished, interactive presentations that can be shared online or downloaded for offline use.</p>
+  </section>
+
+  <section id="features">
+    <h2>2. Key Capabilities</h2>
+    <ul>
+      <li>Instant slide creation: Generate complete slide decks from text prompts.</li>
+      <li>Smart layouts: AI organizes content with optimal fonts, colors, and spacing.</li>
+      <li>Interactive content: Embed videos, polls, charts, and call-to-action buttons.</li>
+      <li>Web publishing: Share presentations as responsive web pages.</li>
+      <li>Collaboration: Team members can co-edit, comment, and update slides in real-time.</li>
+      <li>Export options: Download slides as PDFs or PowerPoint files.</li>
+    </ul>
+  </section>
+
+  <section id="uses">
+    <h2>3. Popular Use Cases</h2>
+    <p>Professionals use Gamma to pitch ideas, design client proposals, create sales decks, and craft investor presentations. Educators use it to develop engaging learning resources, while content creators publish interactive web stories and portfolios.</p>
+  </section>
+
+  <section id="benefits">
+    <h2>4. Benefits & Advantages</h2>
+    <ul>
+      <li>Saves time by automating slide design and formatting.</li>
+      <li>Ensures visual consistency with smart theme suggestions.</li>
+      <li>Enhances engagement through interactive elements.</li>
+      <li>Works directly in the browser—no installation needed.</li>
+      <li>Supports teams with collaborative editing and commenting.</li>
+    </ul>
+  </section>
+
+  <section id="tips">
+    <h2>5. Tips for Using Gamma AI</h2>
+    <ul>
+      <li>Start with clear text prompts for best AI slide output.</li>
+      <li>Use the AI style suggestions but customize fonts and images to match your brand.</li>
+      <li>Embed videos and polls to make presentations more dynamic.</li>
+      <li>Always preview and adjust layouts before sharing or exporting.</li>
+    </ul>
+  </section>
+
+  <section id="video">
+    <h2>6. Tutorial Video</h2>
+<video src="gamma.mp4"  width="560" height="315" controls></video>
+  </section>
+
+  <footer>© 2025 Gamma AI Notes | Created for Learning</footer>
+
+  <script>
+    const progress = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('section').forEach(sec => {
+        if (sec.getBoundingClientRect().top < window.innerHeight - 50) {
+          sec.style.opacity = '1';
+          sec.style.transform = 'translateY(0)';
+        }
+      });
+      const s = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+      progress.style.width = s + '%';
+    });
+
+    function downloadHTML() {
+      const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'gamma_ai_notes.html';
+      a.click();
+    }
+  </script>
+</body>
+</html>

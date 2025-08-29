@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Internet Today - Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 950px;
+      background: #dee5f0;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #34495e;
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #111111;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    nav {
+      background: #2980b9;
+      color: white;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+    }
+
+    nav h2 {
+      margin-top: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    nav li {
+      margin: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      transition: all 0.6s ease-out;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    iframe {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+    }
+
+    button {
+      margin: 15px 8px;
+      padding: 12px 24px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #3498db;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.9em;
+      margin: 60px 0 20px;
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #2980b9;
+      width: 0%;
+      z-index: 9999;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode h1 {
+      color: #ecf0f1;
+      border-color: #3498db;
+    }
+
+    body.dark-mode h2 {
+      color: #3498db;
+    }
+
+    body.dark-mode nav {
+      background: #333;
+    }
+
+    body.dark-mode nav a {
+      color: #aad;
+    }
+
+    body.dark-mode section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    @media(max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      button,
+      #progress-bar {
+        display: none;
+      }
+
+      nav {
+        background: none;
+        color: black;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <h1>The Internet Today</h1>
+
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+  <button onclick="window.print()">Print / Save PDF</button>
+  <button onclick="downloadHTML()">Download HTML</button>
+
+  <nav>
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#definition">1. Definition & Evolution</a></li>
+      <li><a href="#modern">2. Modern Connectivity</a></li>
+      <li><a href="#services">3. Internet Services</a></li>
+      <li><a href="#cybersecurity">4. Cybersecurity & Safe Use</a></li>
+      <li><a href="#practical">5. Practical Tips</a></li>
+      <li><a href="#video">6. Video Resource</a></li>
+    </ul>
+  </nav>
+
+  <section id="definition">
+    <h2>1. Definition & Evolution</h2>
+    <p>The Internet is a global network of interconnected computer systems that enables the transfer of data, information, and multimedia. It uses communication protocols like TCP/IP and HTTPS to securely exchange information worldwide.</p>
+    <ul>
+      <li><strong>Origins:</strong> The Internet began as ARPANET in 1969, designed for research and military communication. It evolved from dial-up connections and packet-switching methods to modern broadband, fiber optics, and 5G networks.</li>
+    </ul>
+  </section>
+
+  <section id="modern">
+    <h2>2. Modern Connectivity</h2>
+    <ul>
+      <li><strong>Broadband & Fiber:</strong> Provide fast, always-on connections ideal for streaming and large data transfers.</li>
+      <li><strong>Wi-Fi:</strong> Wireless local area networks for homes, schools, and offices.</li>
+      <li><strong>Mobile Networks:</strong> 4G and 5G technologies deliver high-speed access on mobile devices.</li>
+      <li><strong>Key Hardware:</strong> Modems and routers manage wired and wireless data transfer. Data moves through cables or via radio waves for Wi-Fi and cellular networks.</li>
+    </ul>
+  </section>
+
+  <section id="services">
+    <h2>3. Internet Services</h2>
+    <h3>World Wide Web (WWW)</h3>
+    <ul>
+      <li><strong>Browsers:</strong> Modern browsers (Chrome, Firefox, Edge, Safari) include privacy modes, security tools, and extensions.</li>
+      <li><strong>Websites & Apps:</strong> Hosted on servers, accessed via URLs. E-commerce, social media, and e-learning sites are common examples.</li>
+    </ul>
+
+    <h3>Email</h3>
+    <ul>
+      <li><strong>Basics:</strong> Uses SMTP for sending, POP3 or IMAP for receiving. Web-based services like Gmail and Outlook offer multimedia support and calendar integration.</li>
+      <li><strong>Structure:</strong> Username, “@” symbol, and domain (e.g., yourname@gmail.com).</li>
+      <li><strong>Features:</strong> Spam filtering, phishing protection, two-factor authentication (2FA), and cloud integration are standard.</li>
+    </ul>
+  </section>
+
+  <section id="cybersecurity">
+    <h2>4. Cybersecurity & Safe Use</h2>
+    <ul>
+      <li><strong>Strong Passwords & 2FA:</strong> Use unique passwords and enable two-factor authentication.</li>
+      <li><strong>Secure Connections:</strong> Check for “https://” and the padlock icon when browsing sensitive sites.</li>
+      <li><strong>Regular Updates:</strong> Keep software updated to prevent vulnerabilities.</li>
+      <li><strong>Awareness:</strong> Recognize phishing, malware, and suspicious links. Don’t open unknown attachments.</li>
+      <li><strong>Privacy:</strong> Control what you share on social media. Use privacy settings and back up data securely on reputable cloud services.</li>
+    </ul>
+  </section>
+
+  <section id="practical">
+    <h2>5. Practical Tips</h2>
+    <h3>Web Browsing</h3>
+    <ul>
+      <li>Bookmark favorite sites for easy access.</li>
+      <li>Use navigation tools: Back, Forward, Refresh, and Home buttons.</li>
+      <li>Search smartly with precise keywords and operators.</li>
+    </ul>
+
+    <h3>Email Etiquette</h3>
+    <ul>
+      <li>Use clear subject lines and polite, concise language.</li>
+      <li>Proofread before sending. Attach only relevant, virus-free files.</li>
+      <li>Organize with folders and labels for better management.</li>
+    </ul>
+
+    <h3>Productivity</h3>
+    <ul>
+      <li>Integrate calendars, tasks, and cloud services for efficiency.</li>
+      <li>Use filters and rules to sort emails automatically.</li>
+    </ul>
+  </section>
+
+  <section id="video">
+    <h2>6. Video </h2>
+    <video src="internet.mp4" width="560" height="315" controls ></video>
+  </section>
+
+  <footer>© 2025 Internet Today Notes | Created for Learning</footer>
+
+  <script>
+    const progress = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('section').forEach(sec => {
+        if (sec.getBoundingClientRect().top < window.innerHeight - 50) {
+          sec.style.opacity = '1';
+          sec.style.transform = 'translateY(0)';
+        }
+      });
+      const s = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+      progress.style.width = s + '%';
+    });
+
+    function downloadHTML() {
+      const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'internet_today_notes.html';
+      a.click();
+    }
+  </script>
+</body>
+</html>

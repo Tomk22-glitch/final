@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cybersecurity Notes</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 950px;
+      background: #f4f6f8;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    nav {
+      background: #2980b9;
+      color: white;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+    }
+
+    nav h2 {
+      margin-top: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    nav li {
+      margin: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      transition: all 0.6s ease-out;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    button {
+      margin: 15px 8px;
+      padding: 12px 24px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #3498db;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.9em;
+      margin: 60px 0 20px;
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #2980b9;
+      width: 0%;
+      z-index: 9999;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode h1 {
+      color: #ecf0f1;
+      border-color: #3498db;
+    }
+
+    body.dark-mode h2 {
+      color: #3498db;
+    }
+
+    body.dark-mode nav {
+      background: #333;
+    }
+
+    body.dark-mode nav a {
+      color: #aad;
+    }
+
+    body.dark-mode section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    @media(max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      button,
+      #progress-bar {
+        display: none;
+      }
+
+      nav {
+        background: none;
+        color: black;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cybersecurity Notes</h1>
+
+  <nav>
+    <h2>Navigation</h2>
+    <ul>
+      <li><a href="#importance">Why Cybersecurity Matters</a></li>
+      <li><a href="#threats">Common Cyber Threats</a></li>
+      <li><a href="#best">Best Practices</a></li>
+      <li><a href="#safe">Safe Browsing & Email</a></li>
+      <li><a href="#network">Securing Networks</a></li>
+      <li><a href="#org">For Organizations</a></li>
+      <li><a href="#future">Future Trends</a></li>
+    </ul>
+  </nav>
+
+  <button onclick="window.print()">Download/Print PDF</button>
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+
+  <section id="importance">
+    <h2>Why Cybersecurity Matters</h2>
+    <p>Cybersecurity is the protection of computer systems, networks, and digital data against unauthorized access, damage, or theft. It plays a critical role in personal privacy, business integrity, and national security.</p>
+    <ul>
+      <li>Prevents identity theft and financial fraud.</li>
+      <li>Protects confidential information and communications.</li>
+      <li>Ensures systems remain operational and secure.</li>
+      <li>Builds trust for online transactions and services.</li>
+      <li>Supports regulatory compliance and data privacy laws.</li>
+    </ul>
+  </section>
+
+  <section id="threats">
+    <h2>Common Cyber Threats</h2>
+    <p>Threats evolve daily. Understanding them helps individuals and organizations stay prepared.</p>
+    <ul>
+      <li>Viruses and malware infect devices and corrupt data.</li>
+      <li>Ransomware locks files until a ransom is paid.</li>
+      <li>Phishing tricks users into sharing credentials.</li>
+      <li>Social engineering manipulates human behavior.</li>
+      <li>Zero-day exploits target unpatched vulnerabilities.</li>
+    </ul>
+  </section>
+
+  <section id="best">
+    <h2>Best Practices</h2>
+    <p>Adopting smart security habits reduces risks dramatically.</p>
+    <ul>
+      <li>Use complex passwords with letters, numbers, and symbols.</li>
+      <li>Enable two-factor authentication for all important accounts.</li>
+      <li>Keep operating systems and applications up to date.</li>
+      <li>Install and update antivirus and firewall protection.</li>
+      <li>Back up essential data regularly on secure storage.</li>
+    </ul>
+  </section>
+
+  <section id="safe">
+    <h2>Safe Browsing & Email</h2>
+    <p>Internet and email are common threat entry points — be cautious and stay informed.</p>
+    <ul>
+      <li>Visit only secure websites with HTTPS encryption.</li>
+      <li>Ignore emails from unknown or suspicious senders.</li>
+      <li>Be wary of urgent messages asking for information.</li>
+      <li>Never open unexpected attachments.</li>
+      <li>Use spam filters and security plugins in browsers.</li>
+    </ul>
+  </section>
+
+  <section id="network">
+    <h2>Securing Networks</h2>
+    <p>Network security defends devices and data from remote attacks.</p>
+    <ul>
+      <li>Change default router usernames and passwords.</li>
+      <li>Use WPA3 or WPA2 encryption for Wi-Fi networks.</li>
+      <li>Install network firewalls to monitor traffic.</li>
+      <li>Disable unnecessary remote access features.</li>
+      <li>Consider a VPN for secure connections on public Wi-Fi.</li>
+    </ul>
+  </section>
+
+  <section id="org">
+    <h2>Cybersecurity for Organizations</h2>
+    <p>Businesses must take extra steps to protect employees, data, and systems.</p>
+    <ul>
+      <li>Implement security policies and employee training.</li>
+      <li>Conduct regular security audits and penetration testing.</li>
+      <li>Encrypt sensitive files and communications.</li>
+      <li>Manage access permissions carefully.</li>
+      <li>Develop an incident response plan for breaches.</li>
+    </ul>
+  </section>
+
+  <section id="future">
+    <h2>Future Trends</h2>
+    <p>Cybersecurity will evolve with emerging technology and threats.</p>
+    <ul>
+      <li>AI and automation for threat detection and response.</li>
+      <li>More IoT devices demanding stronger security controls.</li>
+      <li>Growth of cloud-native security tools.</li>
+      <li>Zero Trust architectures for stricter access management.</li>
+      <li>Global emphasis on privacy and data protection laws.</li>
+    </ul>
+  </section>
+
+  <footer>&copy; 2025 Cybersecurity Notes | All rights reserved.</footer>
+
+</body>
+</html>

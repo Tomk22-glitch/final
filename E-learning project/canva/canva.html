@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Canva Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 900px;
+      background: #f4f7f8;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 3px solid #1abc9c;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #1abc9c;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    img {
+      display: block;
+      margin: 30px auto;
+      width: 140px;
+    }
+
+    nav {
+      background: #1abc9c;
+      color: white;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+    }
+
+    nav h2 {
+      margin-top: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    nav li {
+      margin: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      transition: all 0.6s ease-out;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    iframe {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+    }
+
+    button {
+      margin: 15px 8px;
+      padding: 12px 24px;
+      background: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #16a085;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.9em;
+      margin: 60px 0 20px;
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #1abc9c;
+      width: 0%;
+      z-index: 9999;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode h1 {
+      color: #ecf0f1;
+      border-color: #16a085;
+    }
+
+    body.dark-mode h2 {
+      color: #16a085;
+    }
+
+    body.dark-mode nav {
+      background: #333;
+    }
+
+    body.dark-mode nav a {
+      color: #aad;
+    }
+
+    body.dark-mode section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    @media(max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+
+      nav {
+        font-size: 0.95em;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      button,
+      #progress-bar {
+        display: none;
+      }
+
+      nav {
+        background: none;
+        color: black;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Canva_Logo.svg/1200px-Canva_Logo.svg.png" alt="Canva Logo">
+  <h1>Canva Notes</h1>
+
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+  <button onclick="window.print()">Print / Save PDF</button>
+  <button onclick="downloadHTML()">Download HTML</button>
+
+  <nav>
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#what">1. What is Canva?</a></li>
+      <li><a href="#features">2. Core Features</a></li>
+      <li><a href="#usage">3. Who Uses Canva</a></li>
+      <li><a href="#pro">4. Pro & AI Tools</a></li>
+      <li><a href="#collab">5. Collaboration & Education</a></li>
+      <li><a href="#video">6. Tutorial Video</a></li>
+    </ul>
+  </nav>
+
+  <section id="what">
+    <h2>1. What is Canva?</h2>
+    <p>Canva is a user-friendly online graphic design platform that enables people to create stunning visuals with ease, even if they have no prior design experience. It was founded in 2013 and has grown to over 220 million users worldwide.</p>
+    <p>It works entirely in the cloud, which means your projects are accessible anywhere, anytime, on any device.</p>
+  </section>
+
+  <section id="features">
+    <h2>2. Core Features</h2>
+    <ul>
+      <li>Drag-and-drop editor with thousands of templates for social media, presentations, posters, and more.</li>
+      <li>Massive media library: stock photos, icons, shapes, videos, audio, and animations.</li>
+      <li>Powerful editing tools: filters, background remover, layer control, and AI photo enhancements.</li>
+      <li>Video editing suite for trimming, adding music, and simple animations.</li>
+      <li>Brand Kit for saving custom fonts, logos, and colors for consistent branding.</li>
+      <li>Ability to export as PDF, PNG, MP4, GIF, and more.</li>
+    </ul>
+  </section>
+
+  <section id="usage">
+    <h2>3. Who Uses Canva</h2>
+    <p>Canva is used by students, teachers, business owners, marketers, and professional designers alike. It’s especially popular among small businesses, non-profits, and educators who need to create professional visuals quickly and affordably.</p>
+  </section>
+
+  <section id="pro">
+    <h2>4. Canva Pro & AI Tools</h2>
+    <p>Canva Pro unlocks advanced features such as premium stock photos, video assets, Magic Resize, background remover, brand controls, and more storage.</p>
+    <p>New AI tools include Magic Write for text generation, Magic Edit for smart edits, and AI presentations. Integration with ChatGPT streamlines content ideas directly inside the design workflow.</p>
+  </section>
+
+  <section id="collab">
+    <h2>5. Collaboration & Education</h2>
+    <p>Canva for Teams allows real-time collaboration, shared folders, and commenting. Canva for Education provides free premium tools to schools, letting teachers and students design interactive learning resources together.</p>
+  </section>
+
+  <section id="video">
+    <h2>6. Tutorial Video</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/jzWxBuvwuwQ" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <footer>© 2025 Canva Notes | Created by Tom</footer>
+
+  <script>
+    const progress = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('section').forEach(sec => {
+        if (sec.getBoundingClientRect().top < window.innerHeight - 50) {
+          sec.style.opacity = '1';
+          sec.style.transform = 'translateY(0)';
+        }
+      });
+      const s = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+      progress.style.width = s + '%';
+    });
+
+    function downloadHTML() {
+      const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'canva_notes.html';
+      a.click();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,811 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stykesheet" href="ground.css">
+    <title>COMPLAB E-PLATFORM</title>
+    <link rel="icon" href="logo.jpeg" />
+
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #010133, #043521);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(135deg, #0d4cd4, #1eaf73);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #1e40af;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #ffffff;
+            margin-top: 1.5rem;
+        }
+
+        h4 {
+            margin: 2px;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem;
+        }
+
+
+
+
+        .course-card {
+            background-color: #f8fafc;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.5s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .course-card:hover {
+            transform: scale(1.1);
+            box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            margin-top: 20px;
+        }
+
+        .course-info {
+            padding: 1.5rem;
+        }
+
+        .difficulty {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        #exams img {
+            object-fit: fill;
+            height: 400px;
+            width: 900px;
+        }
+
+
+
+        .beginner {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+
+        .intermediate {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+
+        .advanced {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        .Pro {
+            background-color: #2b2727;
+            color: #ff0505;
+        }
+
+        footer {
+            background-color: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .search-container {
+            margin: 1.5rem 0;
+        }
+
+        .search-container input {
+            width: 100%;
+            max-width: 500px;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .stat-label {
+            color: #64748b;
+        }
+
+.lecturer-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+ background-color: #64748b;
+
+     
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .lecturer-top img {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      margin-right: 15px;
+    }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1e40af;
+        }
+
+        @media (max-width: 768px) {
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 0.25rem;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <header>
+        <h3>
+            Mukuru Skills Training Center
+        </h3>
+        <img src="logo.png">
+        
+
+<div class="lecturer-top">
+    <img src="teacher.jpg" alt="Lecturer Photo">
+    <div class="lecturer-info">
+      <h1 style="font-size: 35px;">Madam: Tabitha</h1>
+      <p  style="font-size: 20px;">Senior Lecturer in Computer Science</p>
+    </div>
+  </div>
+
+       
+        <p>Master Computer Studies from Basics level to to Pro level</p>
+        <h1 style="text-align: start;text-decoration: underline;">Course Overview</h1>
+        <p style="text-align: start;">This structured program is designed to take learners from absolute beginners to professional mastery in their chosen field. It begins with foundational knowledge and simple projects, progresses into intermediate application with case studies and collaboration, and advances into complex topics and specialization. The final stage focuses on professional readiness. Throughout the journey, students benefit from Q\&A forums and progress tracking, ensuring both academic growth and practical, career-ready skills.</p>
+    </header>
+
+    <nav>
+        <a href="#intro">Introduction</a>
+        <a href="#basics">Beginner Tools</a>
+        <a href="#intermediate">Intermediate Tools</a>
+        <a href="#advanced">Advanced Tools</a>
+        <a href="#Pro">Pro Tools</a>
+         <a href="#exams">Exams / Results</a>
+    </nav>
+
+    <main>
+
+        <div class="search-container">
+            <h2 style="color: black;">Start Your Learning Journey</h2>
+
+
+            <div class="stats">
+
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Students</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+            </div>
+
+
+            <section id="intro">
+
+                <h2>Introduction to Computers</h2>
+                <p>Start your computer literacy journey by understanding the fundamental concepts of computing
+                    technology.</p>
+                <form action="intro/INTRO.html" method="get">
+                    <div class="course-grid">
+                        <div class="course-card" onclick="selectCourse('Computer Fundamentals')">
+                            <img src="intro/intro.jpg">
+                            <div class="course-info">
+
+                                <p>Learn about hardware, software, and basic operations.</p>
+                              <a href="intro/intro.html" ><button type="button">Introduction to computers</button></a>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 15%"></div>
+                                </div>
+                            </div>
+                        </div>
+                </form>
+
+                
+                    <div class="course-card" onclick="selectCourse('Operating Systems')">
+                        <img src="osnotes/os.jpg"
+                            alt="Comparison of Windows and macOS interfaces side by side on dual monitors">
+                        <div class="course-info">
+
+                            <p>Understand Windows, macOS, and Linux basics.</p>
+                          <a href="osnotes/osnotes.html">
+               <button type="button">Operating System</button>  </a>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+               
+
+
+
+
+
+
+
+             
+                    <div class="course-card" onclick="selectCourse('File Management')">
+                        <img src="fileman/file.jpg">
+                        <div class="course-info">
+
+
+                            <p>Master organizing and managing digital files.</p>
+
+                          <a href="fileman/fileman.html">
+               <button type="button">File Management</button>  </a>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 5%"></div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        </section>
+
+        <section id="basics">
+            <h2><span class="beginner">Beginner Tools </span></h2>
+            <p>Learn essential productivity tools that are fundamental in modern workplaces.</p>
+
+
+           
+                <div class="course-grid">
+                    <div class="course-card" onclick="selectCourse('Microsoft Word Basics')">
+                        <img src="word/word.png">
+                        <div class="course-info">
+                            <p>Document creation, formatting, and professional layouts.</p>
+                      <a href="word/word.html"><button type="button">Microsoft Word Basics</button></a>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+            
+           
+                <div class="course-card" onclick="selectCourse('Microsoft Excel Basics')">
+                    <img src="excel/excel.jpg" width="59px">
+                    <div class="course-info">
+                        <p>Spreadsheets, formulas, and basic data analysis.</p>
+                      <a href="excel/excel.html"><button type="button">Microsoft Excel Basics</button></a>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 15%"></div>
+                        </div>
+                    </div>
+                </div>
+            
+          
+                <div class="course-card" onclick="selectCourse('Microsoft PowerPoint')">
+                    <img src="powerpoint/power.jpg">
+                    <div class="course-info">
+                        <p>Create engaging presentations with animations.</p>
+       <a href="powerpoint/powerpoint.html"><button type="submit">Microsoft PowerPoint</button></a>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 12%"></div>
+                        </div>
+                    </div>
+                </div>
+           
+
+            <div class="course-card" onclick="selectCourse('Microsoft Access')">
+                <img src="access/access.jpg" alt="Database relationships view in Microsoft Access showing linked tables">
+                <div class="course-info">
+                    <span class="difficulty beginner">Beginner</span>
+                    <h3>Microsoft Access</h3>
+                    <p>Introduction to database management.</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 8%"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+                <div class="course-card" onclick="selectCourse('Microsoft Publisher')">
+                    <img src="publisher/pub.png">
+                    <div class="course-info">
+                        <p>Desktop publishing for newsletters and brochures.</p>
+                         <a href="publisher/publisher.html"><button type="submit">Microsoft Publisher</button></a>
+
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+           
+            </div>
+        </section>
+
+        <section id="intermediate">
+            <h2><span class="intermediate">Intermediate Tools</h2></span>
+            <p>Expand your skills with professional-grade design and creativity tools.</p>
+
+           
+                <div class="course-grid">
+                    <div class="course-card" onclick="selectCourse('Photoshop Fundamentals')">
+                        <img src="photoshop/ps.jpg">
+                        <div class="course-info">
+                            <span class="difficulty intermediate">Intermediate</span>
+                            <p>Image manipulation and photo editing basics.</p>
+                             <a href="photoshop/photoshop.html"><button type="submit">Photoshop Fundamentals</button></a>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 25%"></div>
+                            </div>
+                        </div>
+                    </div>
+            
+           
+                <div class="course-card" onclick="selectCourse('Canva for Business')">
+                    <img src="canva/Canva.jpg">
+                    <div class="course-info">
+                        <span class="difficulty intermediate">Intermediate</span>
+                        <p>Create professional designs without coding.</p>
+                  <a href="canva/canva.html"><button type="submit">Canva for Business</button></a>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 30%"></div>
+                        </div>
+                    </div>
+                </div>
+            
+           
+                <div class="course-card" onclick="selectCourse('Gamma Presentations')">
+                    <img src="gamma/g logo.jpg">
+                    <div class="course-info">
+                        <span class="difficulty intermediate">Intermediate</span>
+                        <p>Next-gen presentation tool for impactful slides.</p>
+             <a href="gamma/gamma.html"><button type="submit">Gamma Presentations</button></a>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 18%"></div>
+                        </div>
+                    </div>
+                </div>
+  
+
+
+           
+                <div class="course-card">
+                    <img src="internet/internet logo.jpg">
+                    <div class="course-info">
+                        <span class="difficulty advanced">Advanced</span>
+                        <p>Understand how networks operate.</p>
+              <a href="internet/internet.html"><button type="submit">The Internet Today</button></a>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+
+         
+                <div class="course-card">
+                    <img src="AI/AI.jpg">
+                    <div class="course-info">
+                        <span class="difficulty advanced">Advanced</span>
+                        <p>The future of Artificial Intelligence</p>
+              <a href="AI/AI.html"><button type="submit">The Internet Today</button></a>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            
+                <div class="course-card">
+                    <img src="sql/sql.jpg">
+                    <div class="course-info">
+                        <span class="difficulty advanced">Advanced</span>
+                        <p>Introduction to SQL</p>
+            <a href="sql/sql.html"><button type="submit">SQL Databases</button></a>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+
+           
+
+           
+                <div class="course-card">
+                    <img src="digitalbs/digiatal business.jpg">
+                    <div class="course-info">
+                        <span class="difficulty advanced">Advanced</span>
+                        <p>Market like a pro</p>
+                        <a href="digitalbs/digital business.html"> <button type="submit">Digital marketing</button></a>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+
+            
+
+
+            
+                <div class="course-card" onclick="selectCourse('Video Editing Basics')">
+                    <img src="https://placehold.co/600x400"
+                        alt="Video editing timeline showing multiple tracks and preview window">
+                    <div class="course-info">
+                        <span class="difficulty intermediate">intermediate</span>
+                        <p>Introduction to Premiere Pro and DaVinci Resolve.</p>
+                        <p>Video Editing Basics</p>
+
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            
+
+
+
+        </section>
+
+        <section id="advanced">
+            <h2><span class="advanced">Advanced Tools</span></h2>
+            <p>Protect yourself and your data in the digital world.</p>
+
+
+
+
+
+
+                <div class="course-grid">
+                    <div class="course-card">
+                        <img src="cyber/dsafety.jpg">
+                        <div class="course-info">
+                            <span class="difficulty advanced">Advanced</span>
+                            <p>Learn about threats and protection methods.</p>
+                  <a href="cyber/cyber.html"> <button type="submit">Cybersecurity Basics</button></a>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 15%"></div>
+                            </div>
+                        </div>
+                    </div>
+           
+
+           
+
+                <div class="course-card">
+                    <img src="digital/cyber.jpg">
+                    <div class="course-info">
+                        <span class="difficulty advanced">Advanced</span>
+                        <p>Essential practices for safe browsing.</p>
+           <a href="digital/digital/digital.html"> <button type="submit">Digital saftey</button></a>
+
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 22%"></div>
+                        </div>
+                    </div>
+                </div>
+           
+
+                <div class="course-card">
+                    <img src="web.jpg">
+                    <div class="course-info">
+                        <span class="difficulty advanced">Advanced</span>
+                        <p>Learn how create front and backend coding </p>
+              <a href="webdev/web development.html"><button type="submit">Web development</button></a>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+
+    
+
+                <div class="course-card">
+                    <img src="html/html.jpg">
+                    <div class="course-info">
+                        <span class="difficulty advanced">Advanced</span>
+                        <p>Learn HTML coding </p>
+                        <button type="submit">Html</button>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+
+            
+
+            
+                <div class="course-card">
+                    <img src="css/css.jpg">
+                    <div class="course-info">
+                        <span class="difficulty advanced">Advanced</span>
+                        <p>Learn CSS coding </p>
+                        <button type="submit">Css</button>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+
+            
+
+
+                <div class="course-card">
+                    <img src="js/js.jpg">
+                    <div class="course-info">
+                        <span class="difficulty advanced">Advanced</span>
+                        <p>Learn Java Script coding </p>
+                        <button type="submit">JavaScript</button>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+           
+        </section>
+
+        <section id="Pro">
+            <h2><span class="Pro">Pro Tools</span></h2>
+            <h2>Comming soon </h2>
+
+
+
+    <div class="course-grid">
+                <div class="course-card">
+                    <img src="linux/linux.jpg">
+                    <div class="course-info">
+                        <span class="difficulty Pro">Pro</span>
+                        <p></p>
+                        <button type="submit">linux</button>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+            
+
+
+
+                <div class="course-card">
+                    <img src="ubuntu/ubuntu.jpg">
+                    <div class="course-info">
+                        <span class="difficulty Pro">Pro</span>
+                        <p> </p>
+                        <button type="submit">ubuntu</button>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+            
+
+          
+                <div class="course-card">
+                    <img src="network/network.jpg">
+                    <div class="course-info">
+                        <span class="difficulty Pro">Pro</span>
+                        <p> Targeting data flow between devices</p>
+                        <button type="submit">Network Attacks</button>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    
+                </div>
+                </div>
+            
+
+          
+                <div class="course-card">
+                    <img src="virus/virus.jpg">
+                    <div class="course-info">
+                        <span class="difficulty Pro">Pro</span>
+                        <p>Using malicious attacks </p>
+                        <button type="submit">Malware Based Attacks</button>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    
+                </div>
+                </div>
+            
+
+
+                <div class="course-card">
+                    <img src="wifi/wifi.jpg">
+                    <div class="course-info">
+                        <span class="difficulty Pro">Pro</span>
+                        <p>Targeting wifi and smart devices</p>
+                        <button type="submit">Wireless & IOT Hacking</button>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+            
+
+            
+                <div class="course-card">
+                    <img src="pass/pass.jpg">
+                    <div class="course-info">
+                        <span class="difficulty Pro">Pro</span>
+                        <p> </p>
+                        <button type="submit">Password attacks</button>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+               
+            
+
+ 
+                <div class="course-card">
+                    <img src="python/python.jpg">
+                    <div class="course-info">
+                        <span class="difficulty Pro">Pro</span>
+                        <p></p>
+                        <button type="submit">Python</button>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </section>
+
+        <section id="exams">
+            
+     <a href="exams/exams.html"> <button type="submit" style="margin-bottom: 30px;">Exams</button></a>
+            
+            
+
+
+            <p>Join thousands of students mastering computer skills with TechLearn.</p>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2025 COMPLAB E-LEARNINNG PLATFORM| Created by Tom</p>
+        <p>Contact: info@techlearn.com | Support: support@techlearn.com</p>
+    </footer>
+
+    <script>
+        function search() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('#results li');
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    item.style.display = ''; // Show
+                } else {
+                    item.style.display = 'none'; // Hide
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Word Processing Notes</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 950px;
+      background: #f4f6f8;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      color: #34495e;
+      margin-top: 25px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    nav {
+      background: #2980b9;
+      color: white;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+    }
+
+    nav h2 {
+      margin-top: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    nav li {
+      margin: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+    }
+
+    button {
+      margin: 15px 8px;
+      padding: 12px 24px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #3498db;
+    }
+
+    #progressContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: #ddd;
+      z-index: 1000;
+    }
+
+    #progressBar {
+      height: 5px;
+      background: #2980b9;
+      width: 0%;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.9em;
+      margin: 60px 0 20px;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode h1 {
+      color: #ecf0f1;
+      border-color: #3498db;
+    }
+
+    body.dark-mode h2 {
+      color: #3498db;
+    }
+
+    body.dark-mode nav {
+      background: #333;
+    }
+
+    body.dark-mode nav a {
+      color: #aad;
+    }
+
+    body.dark-mode section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    @media(max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      #progressContainer,
+      button {
+        display: none;
+      }
+
+      nav {
+        background: none;
+        color: black;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progressContainer">
+    <div id="progressBar"></div>
+  </div>
+
+  <h1>Word Processing Notes</h1>
+
+  <nav>
+    <h2>Sections</h2>
+    <ul>
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#features">Core Features</a></li>
+      <li><a href="#shortcuts">Keyboard Shortcuts</a></li>
+      <li><a href="#printers">Printers</a></li>
+      <li><a href="#ruler">Ruler & Layout</a></li>
+      <li><a href="#headers">Headers & Footers</a></li>
+      <li><a href="#advanced">Advanced Features</a></li>
+      <li><a href="#formatting">Document Formatting</a></li>
+      <li><a href="#saving">Saving & Printing</a></li>
+      <li><a href="#applications">Practical Applications</a></li>
+      <li><a href="#issues">Troubleshooting</a></li>
+       <li><a href="#video">Tutorial Video</a></li>
+    <li><a href="#tests">questions</a></li>
+
+    </ul>
+  </nav>
+
+  <button onclick="window.print()">Download/Print PDF</button>
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+
+  <section id="definition">
+    <h2>1. Definition of Word Processing</h2>
+    <p>A word processor is application software used to create, edit, format, and print documents. Examples include Microsoft Word and Google Docs, supporting real-time collaboration and advanced editing.</p>
+  </section>
+
+  <section id="features">
+    <h2>2. Core Features & Characteristics</h2>
+    <h3>Essential Functionalities</h3>
+    <ul>
+      <li>Word Wrap</li>
+      <li>Undo and Redo</li>
+      <li>File Protection</li>
+      <li>Mail Merge</li>
+      <li>Graphic Insertion</li>
+      <li>Printing Options</li>
+      <li>Copy, Cut, Paste</li>
+      <li>Page Numbering</li>
+    </ul>
+    <h3>Additional Modern Features</h3>
+    <ul>
+      <li>Auto-Correct & Spell Check</li>
+      <li>Track Changes & Comments</li>
+      <li>Real-Time Collaboration</li>
+      <li>Cloud Integration</li>
+      <li>SmartArt & Graphics</li>
+      <li>Templates & Themes</li>
+      <li>Version History</li>
+    </ul>
+  </section>
+
+  <section id="shortcuts">
+    <h2>3. Keyboard Shortcuts</h2>
+    <p>Standard shortcuts for Windows (Command for macOS):</p>
+    <ul>
+      <li>Bold: Ctrl + B</li>
+      <li>Italic: Ctrl + I</li>
+      <li>Underline: Ctrl + U</li>
+      <li>Save: Ctrl + S</li>
+      <li>Undo: Ctrl + Z</li>
+      <li>Redo: Ctrl + Y</li>
+      <li>Select All: Ctrl + A</li>
+      <li>Copy: Ctrl + C</li>
+      <li>Cut: Ctrl + X</li>
+      <li>Paste: Ctrl + V</li>
+    </ul>
+  </section>
+
+  <section id="printers">
+    <h2>4. Printer Types</h2>
+    <ul>
+      <li><strong>Network Printers:</strong> Shared across multiple users.</li>
+      <li><strong>Local Printers:</strong> Direct USB or wireless connection.</li>
+    </ul>
+  </section>
+
+  <section id="ruler">
+    <h2>5. Ruler and Layout Tools</h2>
+    <ul>
+      <li>Set page margins, align text.</li>
+      <li>Document Orientation: Portrait/Landscape.</li>
+      <li>Gridlines and Guides for precise placement.</li>
+    </ul>
+  </section>
+
+  <section id="headers">
+    <h2>6. Headers, Footers & Page Numbers</h2>
+    <ul>
+      <li>Titles, chapters, confidentiality notes.</li>
+      <li>Navigation with page numbers, dates.</li>
+      <li>Professional presentation.</li>
+    </ul>
+  </section>
+
+  <section id="advanced">
+    <h2>7. Advanced Features</h2>
+    <h3>Formatting Tools</h3>
+    <ul>
+      <li>Styles and Themes</li>
+      <li>SmartArt & Diagrams</li>
+      <li>Track Changes</li>
+      <li>Version History</li>
+    </ul>
+    <h3>Customization</h3>
+    <ul>
+      <li>Custom Shortcuts</li>
+      <li>Accessibility: Alt Text, High-contrast Themes</li>
+      <li>Cloud Integration</li>
+    </ul>
+  </section>
+
+  <section id="formatting">
+    <h2>8. Document Formatting</h2>
+    <h3>Font & Text</h3>
+    <ul>
+      <li>Home → Font group</li>
+      <li>Bold, Italic, Underline</li>
+    </ul>
+    <h3>Paragraph</h3>
+    <ul>
+      <li>Alignment: Left, Center, Right, Justify</li>
+      <li>Line Spacing & Indentation</li>
+      <li>Bullets & Numbering</li>
+    </ul>
+    <h3>Page</h3>
+    <ul>
+      <li>Margins, Orientation, Size</li>
+    </ul>
+  </section>
+
+  <section id="saving">
+    <h2>9. Saving & Printing</h2>
+    <ul>
+      <li>Save as .docx, .pdf</li>
+      <li>Export as PDF</li>
+      <li>Print Preview & Settings</li>
+    </ul>
+  </section>
+
+  <section id="applications">
+    <h2>10. Practical Applications</h2>
+    <ul>
+      <li>Business: Reports, Invoices</li>
+      <li>Education: Essays, Lesson Plans</li>
+      <li>Personal: CVs, Newsletters</li>
+      <li>Local: Official letters, M-Pesa docs</li>
+    </ul>
+  </section>
+
+  <section id="issues">
+    <h2>11. Troubleshooting</h2>
+    <ul>
+      <li>Formatting: Clear All Formatting</li>
+      <li>File Corruption: Open and Repair</li>
+      <li>Compatibility: Save as .doc</li>
+      <li>Accessibility: Use Checker</li>
+    </ul>
+  </section>
+<section id="video">
+  <video src="word.mp4" width="600" controls></video>
+</section>
+  <footer>&copy; 2025 Word Processing Notes | All rights reserved.</footer>
+
+  <script>
+    window.onscroll = function() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+  </script>
+
+</body>
+</html>

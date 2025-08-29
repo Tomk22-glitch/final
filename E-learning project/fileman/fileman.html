@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Basic File Management Notes</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 950px;
+      background: #f4f6f8;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      color: #34495e;
+      margin-top: 25px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    .checklist {
+      margin-top: 20px;
+      padding: 15px 20px;
+      background: #ecf0f1;
+      border-left: 5px solid #2980b9;
+      border-radius: 5px;
+    }
+
+    .checklist li {
+      list-style: "✅ ";
+      margin-left: 10px;
+    }
+
+    nav {
+      background: #2980b9;
+      color: white;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+    }
+
+    nav h2 {
+      margin-top: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    nav li {
+      margin: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+    }
+
+    button {
+      margin: 15px 8px;
+      padding: 12px 24px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #3498db;
+    }
+
+    #progressContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: #ddd;
+      z-index: 1000;
+    }
+
+    #progressBar {
+      height: 5px;
+      background: #2980b9;
+      width: 0%;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.9em;
+      margin: 60px 0 20px;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode h1 {
+      color: #ecf0f1;
+      border-color: #3498db;
+    }
+
+    body.dark-mode h2 {
+      color: #3498db;
+    }
+
+    body.dark-mode nav {
+      background: #333;
+    }
+
+    body.dark-mode nav a {
+      color: #aad;
+    }
+
+    body.dark-mode section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-mode .checklist {
+      background: #1e1e1e;
+    }
+
+    @media(max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+      #progressContainer,
+      button {
+        display: none;
+      }
+      nav {
+        background: none;
+        color: black;
+      }
+      nav a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progressContainer">
+    <div id="progressBar"></div>
+  </div>
+
+  <h1>Basic File Management Notes</h1>
+
+  <nav>
+    <h2>Sections</h2>
+    <ul>
+      <li><a href="#part1">Create Folders</a></li>
+      <li><a href="#part2">Save Documents</a></li>
+      <li><a href="#part3">Manage Files</a></li>
+      <li><a href="#part4">Extra Practice</a></li>
+      <li><a href="#checklist">Assessment Checklist</a></li>
+    </ul>
+  </nav>
+
+  <button onclick="window.print()">Download/Print PDF</button>
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+
+  <section id="part1">
+    <h2>Part 1: Create Folders</h2>
+    <h3>Main Folder</h3>
+    <ul>
+      <li>On the desktop, create a new folder named <strong>My Files</strong>.</li>
+    </ul>
+    <h3>Subfolders</h3>
+    <ul>
+      <li>Inside <strong>My Files</strong>, create three folders:
+        <ul>
+          <li>School</li>
+          <li>Work</li>
+          <li>Personal</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section id="part2">
+    <h2>Part 2: Save Documents in Different Formats</h2>
+    <h3>Text File</h3>
+    <ul>
+      <li>Open Notepad (Windows) or TextEdit (Mac).</li>
+      <li>Type: <em>"My name is [Your Name]. I am learning computer skills."</em></li>
+      <li>Save in <strong>Personal</strong> folder as:
+        <ul>
+          <li>AboutMe.txt</li>
+          <li>AboutMe.rtf</li>
+        </ul>
+      </li>
+    </ul>
+    <h3>Word Document</h3>
+    <ul>
+      <li>Open Microsoft Word or Google Docs.</li>
+      <li>Write: <em>"My favorite subject is [Subject]."</em></li>
+      <li>Save in <strong>School</strong> folder as:
+        <ul>
+          <li>Subject.docx</li>
+          <li>Subject.pdf</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section id="part3">
+    <h2>Part 3: Manage Files</h2>
+    <ul>
+      <li><strong>Move & Rename:</strong> Move <em>AboutMe.txt</em> from <strong>Personal</strong> to <strong>School</strong>. Rename it to <em>Intro.txt</em>.</li>
+      <li><strong>Delete & Recover:</strong> Delete <em>AboutMe.rtf</em>. Recover from Recycle Bin/Trash if needed.</li>
+    </ul>
+  </section>
+
+  <section id="part4">
+    <h2>Part 4: Extra Practice</h2>
+    <ul>
+      <li>Create Shortcut: Right-click <strong>My Files</strong> → Send to Desktop.</li>
+      <li>Search: Open <strong>My Files</strong> and search for <em>.pdf</em> files.</li>
+    </ul>
+  </section>
+
+  <section id="checklist">
+    <h2>Assessment Checklist</h2>
+    <div class="checklist">
+      <ul>
+        <li>Correct folder structure (My Files → School, Work, Personal)</li>
+        <li>Files saved in proper formats (.txt, .rtf, .docx, .pdf)</li>
+        <li>Files moved/renamed correctly</li>
+        <li>Understanding of basic file operations</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>© 2025 Basic File Management | Created by Tom</footer>
+
+  <script>
+    window.onscroll = function() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+  </script>
+
+</body>
+</html>

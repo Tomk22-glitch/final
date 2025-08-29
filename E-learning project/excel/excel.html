@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Spreadsheet Notes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.7;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 4px solid #2980b9;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #2980b9;
+      margin-top: 40px;
+    }
+    h3 {
+      color: #34495e;
+      margin-top: 20px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    #progressContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: #ddd;
+      z-index: 1000;
+    }
+    #progressBar {
+      height: 5px;
+      background: linear-gradient(90deg, #3498db, #2ecc71);
+      width: 0%;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+    mark {
+      background: #f1c40f;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+    kbd {
+      background: #eee;
+      border: 1px solid #bbb;
+      border-radius: 4px;
+      padding: 3px 6px;
+      font-family: monospace;
+    }
+    nav#toc {
+      background: #fff;
+      border-left: 4px solid #2980b9;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    #toc h3 {
+      margin-top: 0;
+    }
+    #toc ul {
+      list-style: none;
+      padding: 0;
+    }
+    #toc li {
+      margin: 8px 0;
+    }
+    #toc a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    #toc a:hover {
+      text-decoration: underline;
+    }
+    .actions {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px 10px;
+      padding: 12px 25px;
+      background: #2980b9;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    .btn:hover {
+      background: #3498db;
+    }
+    .toggle-theme {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background: #2980b9;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body.dark {
+      background: #121212;
+      color: #ddd;
+    }
+    body.dark h1, body.dark h2 {
+      color: #1abc9c;
+    }
+    body.dark nav#toc {
+      background: #1e1e1e;
+      border-left-color: #1abc9c;
+    }
+    body.dark .card {
+      background: #1e1e1e;
+    }
+    body.dark .btn, body.dark .toggle-theme {
+      background: #1abc9c;
+    }
+    body.dark #progressContainer {
+      background: #333;
+    }
+    @media print {
+      #progressContainer, .actions, .toggle-theme {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progressContainer">
+    <div id="progressBar"></div>
+  </div>
+
+  <button class="toggle-theme"><i class="fas fa-adjust"></i> Dark Mode</button>
+
+  <h1>Microsoft Excel Notes</h1>
+
+  <nav id="toc">
+    <h3>📚 Table of Contents</h3>
+    <ul>
+      <li><a href="#def">1. Definition</a></li>
+      <li><a href="#adv">2. Advantages</a></li>
+      <li><a href="#ex">3. Examples</a></li>
+      <li><a href="#comp">4. Components</a></li>
+      <li><a href="#ref">5. Data Types & Referencing</a></li>
+      <li><a href="#func">6. Functions & Formulae</a></li>
+      <li><a href="#tools">7. Essential Tools</a></li>
+      <li><a href="#app">8. Practical Applications</a></li>
+      <li><a href="#trend">9. Trends & Tips</a></li>
+      <li><a href="#video">10. Tutorial Video</a></li>
+    </ul>
+  </nav>
+
+  <div class="actions">
+    <button class="btn" id="download-html"><i class="fa fa-download"></i> Download as HTML</button>
+    <button class="btn" id="download-pdf"><i class="fa fa-file-pdf"></i> Download as PDF</button>
+  </div>
+
+  <div class="card" id="def">
+    <h2>1️⃣ Definition of a Spreadsheet</h2>
+    <p>A spreadsheet is an electronic ledger for entering, editing, and manipulating data in a tabular format (rows & columns).</p>
+    <ul>
+      <li><strong>Manual Spreadsheet:</strong> Paper ledger books written by hand.</li>
+      <li><strong>Electronic Spreadsheet:</strong> Software like Microsoft Excel or Google Sheets.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="adv">
+    <h2>2️⃣ Advantages</h2>
+    <ul>
+      <li><strong>Speed & Efficiency:</strong> Automatic calculations.</li>
+      <li><strong>Accuracy:</strong> Formula auditing and spell check.</li>
+      <li><strong>Large Workspace:</strong> Multiple worksheets in one file.</li>
+      <li><strong>Professional Formatting:</strong> Conditional styles, neat presentation.</li>
+      <li><strong>Data Analysis Tools:</strong> Sorting, filtering, what-if analysis.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="ex">
+    <h2>3️⃣ Examples</h2>
+    <ul>
+      <li><strong>Microsoft Excel</strong></li>
+      <li><strong>Google Sheets</strong></li>
+      <li><strong>Historical:</strong> VisiCalc, Lotus 1-2-3</li>
+    </ul>
+  </div>
+
+  <div class="card" id="comp">
+    <h2>4️⃣ Components</h2>
+    <ul>
+      <li><strong>Worksheet:</strong> Single page for data.</li>
+      <li><strong>Workbook:</strong> File with multiple sheets.</li>
+      <li><strong>Cells, Rows, Columns:</strong> Basic structure.</li>
+      <li><strong>Range:</strong> Group of selected cells.</li>
+      <li><strong>Database Functions & Charts:</strong> Data management & visuals.</li>
+    </ul>
+  </div>
+
+  <div class="card" id="ref">
+    <h2>5️⃣ Data Types & Referencing</h2>
+    <ul>
+      <li><strong>Labels:</strong> Text data.</li>
+      <li><strong>Values:</strong> Numbers, dates.</li>
+      <li><strong>Formulae:</strong> Custom math expressions.</li>
+      <li><strong>Functions:</strong> Built-in like <code>SUM</code>, <code>AVERAGE</code>.</li>
+      <li><strong>Relative:</strong> Changes when moved (<code>A1</code>).</li>
+      <li><strong>Absolute:</strong> Fixed (<code>$A$1</code>).</li>
+    </ul>
+  </div>
+
+  <div class="card" id="func">
+    <h2>6️⃣ Functions & Formulae</h2>
+    <ul>
+      <li><strong>Operators:</strong> +, -, *, /</li>
+      <li><strong>Math:</strong> SUM, PRODUCT, ROUND</li>
+      <li><strong>Statistical:</strong> AVERAGE, COUNT</li>
+      <li><strong>Logical:</strong> IF, COUNTIF, SUMIF</li>
+      <li><strong>Advanced:</strong> FILTER, XLOOKUP</li>
+    </ul>
+  </div>
+
+  <div class="card" id="tools">
+    <h2>7️⃣ Essential Tools</h2>
+    <ul>
+      <li><strong>Wrap Text</strong></li>
+      <li><strong>Freeze Panes</strong></li>
+      <li><strong>Split Worksheet</strong></li>
+      <li><strong>Filtering</strong></li>
+      <li><strong>Formatting Tools</strong></li>
+    </ul>
+  </div>
+
+  <div class="card" id="app">
+    <h2>8️⃣ Practical Applications</h2>
+    <ul>
+      <li>Statistical Analysis</li>
+      <li>Accounting</li>
+      <li>Data Management</li>
+      <li>Forecasting</li>
+      <li>Reporting: Charts & Pivot Tables</li>
+    </ul>
+  </div>
+
+  <div class="card" id="trend">
+    <h2>9️⃣ Trends & Tips</h2>
+    <ul>
+      <li><strong>Cloud Integration</strong></li>
+      <li><strong>Collaboration Tools</strong></li>
+      <li><strong>Data Visualization</strong></li>
+      <li><strong>Local Relevance</strong></li>
+      <li><strong>Modern Functions</strong></li>
+    </ul>
+  </div>
+  <section id="video">
+
+<video src="excel.mp4" width="600" controls ></video>
+
+  </section>
+
+  <script>
+    window.onscroll = function() {
+      var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+      var scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (scrollTop / scrollHeight) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+    document.querySelector('.toggle-theme').onclick = function() {
+      document.body.classList.toggle('dark');
+    };
+    document.getElementById("download-html").onclick = function() {
+      const blob = new Blob([document.documentElement.outerHTML], {type: "text/html"});
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "spreadsheet-notes.html";
+      link.click();
+    };
+    document.getElementById("download-pdf").onclick = function() {
+      window.print();
+    };
+  </script>
+
+</body>
+</html>

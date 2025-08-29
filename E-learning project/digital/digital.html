@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Digital Safety & Ethics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 950px;
+      background: #f4f6f8;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    nav {
+      background: #2980b9;
+      color: white;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+    }
+
+    nav h2 {
+      margin-top: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    nav li {
+      margin: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      transition: all 0.6s ease-out;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    iframe {
+      display: block;
+      margin: 30px auto;
+      max-width: 100%;
+    }
+
+    button {
+      margin: 15px 8px;
+      padding: 12px 24px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #3498db;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.9em;
+      margin: 60px 0 20px;
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #2980b9;
+      width: 0%;
+      z-index: 9999;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode h1 {
+      color: #ecf0f1;
+      border-color: #3498db;
+    }
+
+    body.dark-mode h2 {
+      color: #3498db;
+    }
+
+    body.dark-mode nav {
+      background: #333;
+    }
+
+    body.dark-mode nav a {
+      color: #aad;
+    }
+
+    body.dark-mode section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    @media(max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      button,
+      #progress-bar {
+        display: none;
+      }
+
+      nav {
+        background: none;
+        color: black;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+      <button onclick="document.body.classList.toggle('dark-mode')">🌗Dark Mode</button>
+
+  <div id="progress-bar"></div>
+  
+  <h1>Digital Safety & Ethics</h1>
+
+  <button onclick="window.print()">Print / Save PDF</button>
+  <button onclick="downloadHTML()">Download HTML</button>
+
+  <nav>
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#safety">1. Digital Safety</a></li>
+      <li><a href="#citizenship">2. Digital Citizenship</a></li>
+    </ul>
+  </nav>
+
+  <section id="safety">
+    <h2>1. Digital Safety</h2>
+    <p><strong>What is Cybersecurity?</strong> It’s the practice of protecting your devices and data from theft, misuse, or damage.</p>
+    <ul>
+      <li><strong>Why is it important?</strong> Hackers can steal passwords, money, or misuse your identity. Malware can damage your device.</li>
+    </ul>
+    <h3>Tips to Stay Safe</h3>
+    <ul>
+      <li>🔑 Use strong passwords with symbols and numbers.</li>
+      <li>🔄 Keep your software updated to fix security gaps.</li>
+      <li>🔒 Lock your devices with a PIN or fingerprint.</li>
+      <li>☁️ Back up important files to the cloud or a USB drive.</li>
+      <li>👁️ Be careful about what you share online.</li>
+    </ul>
+
+    <h3>Recognizing Scams & Phishing</h3>
+    <ul>
+      <li>😨 Be wary of urgent messages: “Your account will close in 24 hours!”</li>
+      <li>🔗 Watch for suspicious links and weird senders.</li>
+      <li>❌ Bad grammar and spelling errors are red flags.</li>
+      <li>Use antivirus software and only download trusted apps.</li>
+    </ul>
+
+    <h3>Quick Review</h3>
+    <ul>
+      <li>What is cybersecurity?</li>
+      <li>How can you spot a phishing email?</li>
+      <li>Why update software?</li>
+      <li>What makes a strong password?</li>
+      <li>What should you do if you get a strange message?</li>
+    </ul>
+  </section>
+
+  <section id="citizenship">
+    <h2>2. Digital Citizenship</h2>
+    <p><strong>What is a Digital Citizen?</strong> Someone who uses the internet safely, responsibly, and kindly.</p>
+    <p><strong>What is a Digital Footprint?</strong> The trail of everything you do online — from posts to searches.</p>
+
+    <h3>Good Online Behavior</h3>
+    <ul>
+      <li>✅ Think before you post — your posts can last forever.</li>
+      <li>✅ Be respectful. ❌ Don’t bully or embarrass others.</li>
+      <li>✅ Use privacy settings. ❌ Don’t overshare personal details.</li>
+    </ul>
+
+    <h3>Respecting Intellectual Property</h3>
+    <ul>
+      <li>📌 Give credit when you use someone’s image or idea.</li>
+      <li>📚 Don’t copy-paste others’ work — write in your own words.</li>
+      <li>🚫 Don’t download pirated software or movies — it’s illegal.</li>
+    </ul>
+
+    <h3>Quick Review</h3>
+    <ul>
+      <li>What is a digital footprint?</li>
+      <li>How should you behave online?</li>
+      <li>What is intellectual property?</li>
+      <li>Why not copy work from the internet?</li>
+      <li>What should you check before posting online?</li>
+    </ul>
+  </section>
+digital (2).mp4" width="560" height="315" controls></video>
+</section>
+
+  <footer>© 2025 Digital Safety & Ethics Notes | For Learning</footer>
+
+  <script>
+    const progress = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('section').forEach(sec => {
+        if (sec.getBoundingClientRect().top < window.innerHeight - 50) {
+          sec.style.opacity = '1';
+          sec.style.transform = 'translateY(0)';
+        }
+      });
+      const s = (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100;
+      progress.style.width = s + '%';
+    });
+
+    function downloadHTML() {
+      const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'digital_safety_ethics.html';
+      a.click();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MS Word Quiz</title>
+  <!-- Load EmailJS v3 -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("vicdmYtMuLYghrwuK"); // Replace with your EmailJS Public Key
+    })();
+
+    const correctAnswers = {
+      q1: "a",
+      q2: "c",
+      q3: "c",
+      q4: "b",
+      q5: "b",
+      q6: "true",
+      q7: "true",
+      q8: "false",
+      q9: "false",
+      q10: "true"
+    };
+
+    function checkAnswers() {
+      let score = 0;
+      const total = Object.keys(correctAnswers).length;
+
+      for (let q in correctAnswers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === correctAnswers[q]) {
+          score++;
+        }
+      }
+
+      document.getElementById("result").innerHTML =
+        `You scored ${score} out of ${total}`;
+    }
+
+    function sendEmail() {
+      let answers = "";
+
+      for (let q in correctAnswers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        answers += `${q}: ${(selected ? selected.value : "Not answered")}\n`;
+      }
+
+      const templateParams = {
+        student_name: document.getElementById("studentName").value,
+        quiz_answers: answers
+      };
+
+      emailjs.send("service_7dkh1i6", "template_ieram59", templateParams)
+        .then(function(response) {
+          alert("✅ Submission sent to teacher successfully!");
+        }, function(error) {
+          alert("❌ Failed to send. Error: " + JSON.stringify(error));
+        });
+    }
+  </script>
+</head>
+<body>
+  <h2>MS Word Short Quiz</h2>
+
+  <form id="quizForm">
+    <label>Student Name: <input type="text" id="studentName" required></label><br><br>
+
+    <h3>Section A: Multiple Choice</h3>
+    <p>1. Which shortcut is used to copy text in MS Word?</p>
+    <label><input type="radio" name="q1" value="a"> a) Ctrl + C</label><br>
+    <label><input type="radio" name="q1" value="b"> b) Ctrl + V</label><br>
+    <label><input type="radio" name="q1" value="c"> c) Ctrl + X</label><br>
+    <label><input type="radio" name="q1" value="d"> d) Ctrl + Z</label><br><br>
+
+    <p>2. What is the default file extension for MS Word 2016 and later?</p>
+    <label><input type="radio" name="q2" value="a"> a) .txt</label><br>
+    <label><input type="radio" name="q2" value="b"> b) .doc</label><br>
+    <label><input type="radio" name="q2" value="c"> c) .docx</label><br>
+    <label><input type="radio" name="q2" value="d"> d) .pdf</label><br><br>
+
+    <!-- Continue adding all other questions here... -->
+
+    <br>
+    <button type="button" onclick="checkAnswers()">Check Score</button>
+    <button type="button" onclick="sendEmail()">Submit to Teacher</button>
+  </form>
+
+  <div id="result" style="margin-top:20px; font-weight:bold;"></div>
+</body>
+</html>

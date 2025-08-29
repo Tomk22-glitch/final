@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Computer Studies Notes</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 950px;
+      background: #f4f6f8;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      color: #34495e;
+      margin-top: 25px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #333;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    button {
+      margin: 15px 8px;
+      padding: 12px 24px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #3498db;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.9em;
+      margin: 60px 0 20px;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode h1 {
+      color: #ecf0f1;
+      border-color: #3498db;
+    }
+
+
+ #progressContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: #ddd;
+      z-index: 1000;
+    }
+
+    #progressBar {
+      height: 5px;
+      background: #2980b9;
+      width: 0%;
+    }
+
+
+    body.dark-mode h2 {
+      color: #3498db;
+    }
+
+    body.dark-mode section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-mode table, body.dark-mode th, body.dark-mode td {
+      border-color: #eee;
+    }
+
+    @media(max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      button {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="progressContainer">
+    <div id="progressBar"></div>
+  </div>
+  <h1>Computer Studies Notes</h1>
+
+ 
+
+  <button onclick="window.print()">Download/Print PDF</button>
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+
+  <section>
+    <h2>1. Define the following terms:</h2>
+    <ul>
+      <li><strong>Computer:</strong> An electronic device that processes raw data using predefined instructions to produce meaningful information.</li>
+      <li><strong>Data:</strong> Raw facts or figures needing processing.</li>
+      <li><strong>Information:</strong> Organized and meaningful data.</li>
+      <li><strong>ICT:</strong> Integration of digital tech for communication and data handling.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Basic Components of a Computer System</h2>
+    <ul>
+      <li><strong>Hardware:</strong> Physical parts like CPU, monitor.</li>
+      <li><strong>Software:</strong> Operating systems and applications.</li>
+      <li><strong>Users:</strong> People using the system.</li>
+      <li><strong>Data:</strong> Inputs and outputs.</li>
+      <li><strong>Networking:</strong> Routers, modems for connectivity.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. First General-Purpose Computer</h2>
+    <ul>
+      <li><strong>ENIAC:</strong> Built in 1945 for military calculations, paved the way for modern computing.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. Acronyms and Their Functions</h2>
+    <ul>
+      <li><strong>RAM:</strong> Temporary working memory.</li>
+      <li><strong>ROM:</strong> Permanent memory for firmware.</li>
+      <li><strong>UPS:</strong> Backup power during outages.</li>
+      <li><strong>CPU:</strong> Main processing unit.</li>
+      <li><strong>USB:</strong> Standard for peripherals.</li>
+      <li><strong>HDD:</strong> Magnetic permanent storage.</li>
+      <li><strong>SSD:</strong> Fast storage with no moving parts.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Generations of Computers</h2>
+    <ul>
+      <li><strong>1st:</strong> Vacuum tubes.</li>
+      <li><strong>2nd:</strong> Transistors.</li>
+      <li><strong>3rd:</strong> Integrated Circuits.</li>
+      <li><strong>4th:</strong> Microprocessors.</li>
+      <li><strong>5th:</strong> AI, Quantum computing.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. Parts of a Computer System</h2>
+    <h3>Hardware</h3>
+    <ul>
+      <li><strong>Input:</strong> Keyboard, mouse.</li>
+      <li><strong>Processing:</strong> CPU, GPU.</li>
+      <li><strong>Memory:</strong> RAM, ROM.</li>
+      <li><strong>Storage:</strong> HDD, SSD.</li>
+      <li><strong>Output:</strong> Monitor, printer.</li>
+      <li><strong>Motherboard:</strong> Connects all parts.</li>
+      <li><strong>PSU:</strong> Power Supply Unit.</li>
+    </ul>
+    <h3>Software</h3>
+    <ul>
+      <li><strong>System Software:</strong> OS like Windows.</li>
+      <li><strong>Application Software:</strong> MS Office, browsers.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>7. Major Applications of Computers</h2>
+    <ul>
+      <li><strong>Education:</strong> E-learning, online exams.</li>
+      <li><strong>Healthcare:</strong> Records, telemedicine.</li>
+      <li><strong>Business:</strong> E-commerce, payroll.</li>
+      <li><strong>Transport:</strong> GPS, traffic control.</li>
+      <li><strong>Entertainment:</strong> Streaming, gaming.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>8. Classification of Computers</h2>
+    <h3>By Size</h3>
+    <ul>
+      <li>Supercomputers</li>
+      <li>Mainframes</li>
+      <li>Microcomputers</li>
+    </ul>
+    <h3>By Purpose</h3>
+    <ul>
+      <li>General-purpose</li>
+      <li>Special-purpose</li>
+    </ul>
+    <h3>By Functionality</h3>
+    <ul>
+      <li>Analog</li>
+      <li>Digital</li>
+      <li>Hybrid</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>9. Advantages of Computers</h2>
+    <ul>
+      <li>Speed</li>
+      <li>Accuracy</li>
+      <li>Storage</li>
+      <li>Automation</li>
+      <li>Connectivity</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>10. Computer Laboratory</h2>
+    <ul>
+      <li>A dedicated space for hands-on ICT training.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>11. Computer Lab Safety Precautions</h2>
+    <ul>
+      <li>No food/drinks near devices.</li>
+      <li>Use surge protectors.</li>
+      <li>Good cable management.</li>
+      <li>Update antivirus regularly.</li>
+      <li>Use ergonomic setups.</li>
+      <li>Keep fire extinguishers handy.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>12. Types of UPS Systems</h2>
+    <ul>
+      <li>Standby UPS</li>
+      <li>Line-Interactive UPS</li>
+      <li>Online UPS</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>13. Cybersecurity</h2>
+    <ul>
+      <li><strong>Definition:</strong> Protect systems from threats.</li>
+      <li><strong>Threats:</strong> Malware, phishing, hacking.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>14. System vs Application Software</h2>
+    <table>
+      <tr>
+        <th>System Software</th>
+        <th>Application Software</th>
+      </tr>
+      <tr>
+        <td>OS, manages hardware.</td>
+        <td>MS Word, browsers.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>15. Computer Operations</h2>
+    <ul>
+      <li><strong>Cold Booting:</strong> Full start-up.</li>
+      <li><strong>Warm Booting:</strong> Restart.</li>
+      <li><strong>Shutting Down:</strong> Safe close.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>16. Keyboard Key Groups</h2>
+    <ul>
+      <li>Alphanumeric</li>
+      <li>Function Keys</li>
+      <li>Navigation</li>
+      <li>Control</li>
+      <li>Numeric Keypad</li>
+      <li>Special Keys</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>17. Video</h2>
+     <video src="introvid.mp4" width="600" controls></video>
+  </section>
+
+  <footer>&copy; 2025 Computer Studies Notes | All rights reserved.</footer>
+
+ <script>
+    window.onscroll = function() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+  </script>
+</body>
+</html>

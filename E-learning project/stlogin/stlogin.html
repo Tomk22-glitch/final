@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+
+  <!-- ✅ NEW EmailJS SDK URL -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0d4cd4, #1eaf73);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #0d4cd4;
+    }
+    .login-container input {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .login-container button {
+      width: 100%;
+      padding: 12px 15px;
+      background: #0d4cd4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .login-container button:hover {
+      background: #1eaf73;
+    }
+    .login-container p {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .login-container a {
+      color: #0d4cd4;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Student Login</h2>
+    <form id="loginForm">
+      <input type="text" id="studentId" placeholder="Student ID" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <p><a href="#" id="forgotLink">Forgot Password?</a></p>
+  </div>
+
+  <script>
+    // ✅ Initialize EmailJS with your Public Key
+    (function(){
+      emailjs.init("vicdmYtMuLYghrwuK"); // ✅ Make sure this is your real Public Key
+    })();
+
+    // Handle login
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const studentId = document.getElementById('studentId').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (studentId === 'Tom' && password === '1234') {
+        alert('Login successful! Redirecting...');
+        window.location.href = 'index.html'; 
+      } else {
+        alert('Invalid ID or password.');
+      }
+    });
+
+    // Handle password reset
+    /*document.getElementById('forgotLink').addEventListener('click', function(e) {
+      e.preventDefault();
+      const studentId = prompt("Enter your Student ID to reset password:");
+      if (studentId) {
+        emailjs.send("service_gyptmmv", "template_87otge6",
+         {
+          student_id:'Tom',
+          to_email: "tchege575@gmail.com"
+        })
+        .then(() => {
+          alert("Reset request sent to the teacher!");
+        }, (err) => {
+          alert("Failed to send email: " + JSON.stringify(err));
+        });
+      }
+    });*/
+  </script>
+</body>
+</html>

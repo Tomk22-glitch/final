@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Secure Online Exam Portal</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f4f6f8;
+      color: #333;
+      margin: 0 auto;
+      max-width: 960px;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 10px;
+      margin-bottom: 40px;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background: #2980b9;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #3498db;
+    }
+
+    a.download-link {
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      margin-top: 60px;
+      font-size: 0.9em;
+    }
+
+    #resultsSection {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Secure Online Exam Portal</h1>
+
+  <!-- Teacher uploads an exam -->
+  <section id="upload">
+    <h2>Lecturer: Upload Exam</h2>
+    <label for="examTitle">Exam Title</label>
+    <input type="text" id="examTitle" placeholder="e.g., Computer Fundamentals - Midterm">
+
+    <label for="examFile">Upload Exam File</label>
+    <input type="file" id="examFile">
+
+    <button onclick="uploadExam()">Upload Exam</button>
+
+    <div id="uploadedExamLink"></div>
+  </section>
+
+  <!-- Student downloads and submits -->
+  <section id="studentActions">
+    <h2>Student: Download & Submit Exam</h2>
+    <div id="downloadArea">
+      <p id="noExamMsg">No exam uploaded yet.</p>
+      <div id="examDownloadLink"></div>
+    </div>
+
+    <h3>Submit Completed Exam</h3>
+    <label for="studentID">Student ID</label>
+    <input type="text" id="studentID" placeholder="e.g., ST12345">
+
+    <label for="answerFile">Upload Your Answer File</label>
+    <input type="file" id="answerFile">
+
+    <button onclick="submitAnswer()">Submit Answer</button>
+  </section>
+
+  <footer>© 2025 Secure Exam Portal | Powered by Your Institution</footer>
+
+  <script>
+    let uploadedExam = null; // store exam file URL in browser
+    let studentSubmissions = {}; // secret storage (in real world use a server)
+
+    function uploadExam() {
+      const fileInput = document.getElementById('examFile');
+      const examTitle = document.getElementById('examTitle').value.trim();
+
+      if (!fileInput.files[0] || !examTitle) {
+        alert('Please add a title and select a file.');
+        return;
+      }
+
+      const file = fileInput.files[0];
+      const url = URL.createObjectURL(file); // simulate storage link
+      uploadedExam = { title: examTitle, url: url };
+
+      document.getElementById('uploadedExamLink').innerHTML = `
+        <p><strong>Uploaded:</strong> ${examTitle}</p>
+        <p>Students can now download it below.</p>
+      `;
+
+      // Show download link to students
+      document.getElementById('noExamMsg').style.display = 'none';
+      document.getElementById('examDownloadLink').innerHTML = `
+        <a class="download-link" href="${url}" download="${examTitle}.pdf">📄 Download ${examTitle}</a>
+      `;
+
+      alert('Exam uploaded successfully!');
+    }
+
+    function submitAnswer() {
+      const studentID = document.getElementById('studentID').value.trim();
+      const fileInput = document.getElementById('answerFile');
+
+      if (!studentID || !fileInput.files[0]) {
+        alert('Please enter your Student ID and select your answer file.');
+        return;
+      }
+
+      const answerFile = fileInput.files[0];
+      const url = URL.createObjectURL(answerFile);
+
+      // Save the submission privately
+      studentSubmissions[studentID] = {
+        fileName: answerFile.name,
+        url: url,
+        timestamp: new Date().toLocaleString()
+      };
+
+      alert('Answer submitted successfully!');
+
+      // Clear input
+      fileInput.value = '';
+    }
+
+    // 🔒 For teacher only: view submissions in console (in real life, secured backend)
+    console.log('👨‍🏫 Teacher Secret: To see submissions, type `studentSubmissions` in the browser console.');
+  </script>
+
+</body>
+</html>

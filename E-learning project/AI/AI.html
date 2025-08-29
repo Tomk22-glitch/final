@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Artificial Intelligence (AI) Notes</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 950px;
+      background: #f4f6f8;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2980b9;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    nav {
+      background: #2980b9;
+      color: white;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 40px;
+    }
+
+    nav h2 {
+      margin-top: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    nav li {
+      margin: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      transition: all 0.6s ease-out;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    button {
+      margin: 15px 8px;
+      padding: 12px 24px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #3498db;
+    }
+
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.9em;
+      margin: 60px 0 20px;
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode h1 {
+      color: #ecf0f1;
+      border-color: #3498db;
+    }
+
+    body.dark-mode h2 {
+      color: #3498db;
+    }
+
+    body.dark-mode nav {
+      background: #333;
+    }
+
+    body.dark-mode nav a {
+      color: #aad;
+    }
+
+    body.dark-mode section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    }
+
+    @media(max-width: 600px) {
+      body {
+        padding: 30px 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      button {
+        display: none;
+      }
+
+      nav {
+        background: none;
+        color: black;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Artificial Intelligence (AI) Notes</h1>
+
+  <nav>
+    <h2>Navigation</h2>
+    <ul>
+      <li><a href="#definition">What is AI?</a></li>
+      <li><a href="#types">Types of AI</a></li>
+      <li><a href="#applications">Applications of AI</a></li>
+      <li><a href="#tools">Popular AI Tools</a></li>
+      <li><a href="#languages">Programming Languages for AI</a></li>
+      <li><a href="#ethics">Ethics in AI</a></li>
+      <li><a href="#future">Future of AI</a></li>
+    </ul>
+  </nav>
+
+  <button onclick="window.print()">Download/Print PDF</button>
+  <button onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+
+  <section id="definition">
+    <h2>What is Artificial Intelligence?</h2>
+    <p>Artificial Intelligence (AI) is the simulation of human intelligence in machines that are programmed to think and learn. It allows computers to perform tasks that typically require human reasoning, decision-making, and perception.</p>
+    <ul>
+      <li>Enables machines to process information and solve problems.</li>
+      <li>Uses algorithms to mimic cognitive functions like learning and problem solving.</li>
+      <li>Relies on large datasets to train models and make predictions.</li>
+      <li>Forms the basis for robotics, automation, and smart technologies.</li>
+      <li>Constantly evolves with advances in computing power and data availability.</li>
+    </ul>
+  </section>
+
+  <section id="types">
+    <h2>Types of AI</h2>
+    <p>AI can be categorized based on its capabilities and functionality.</p>
+    <ul>
+      <li>Narrow AI: Performs a specific task (e.g., virtual assistants, spam filters).</li>
+      <li>General AI: Hypothetical AI with human-level cognitive abilities.</li>
+      <li>Reactive Machines: Basic AI systems that react to input but lack memory.</li>
+      <li>Limited Memory: Uses historical data to improve future predictions (e.g., self-driving cars).</li>
+      <li>Self-Aware AI: Theoretical AI with consciousness and self-awareness.</li>
+    </ul>
+  </section>
+
+  <section id="applications">
+    <h2>Applications of AI</h2>
+    <p>AI is integrated into various industries and everyday life.</p>
+    <ul>
+      <li>Healthcare: Assists in diagnostics, drug discovery, and patient monitoring.</li>
+      <li>Finance: Detects fraud, automates trading, and personalizes banking services.</li>
+      <li>Retail: Enhances customer recommendations and inventory management.</li>
+      <li>Transportation: Powers autonomous vehicles and smart traffic systems.</li>
+      <li>Education: Personalizes learning and automates grading.</li>
+    </ul>
+  </section>
+
+  <section id="tools">
+    <h2>Popular AI Tools</h2>
+    <p>Developers and researchers use various AI frameworks and platforms.</p>
+    <ul>
+      <li>TensorFlow: Open-source machine learning framework by Google.</li>
+      <li>PyTorch: Popular library for deep learning research.</li>
+      <li>Scikit-learn: Simple tools for predictive data analysis.</li>
+      <li>Keras: User-friendly API for neural networks.</li>
+      <li>OpenAI API: Provides access to advanced language models like ChatGPT.</li>
+    </ul>
+  </section>
+
+  <section id="languages">
+    <h2>Programming Languages for AI</h2>
+    <p>Various languages power AI systems depending on their purpose and complexity.</p>
+    <ul>
+      <li>Python: Most widely used for its simplicity and libraries.</li>
+      <li>R: Popular for statistical computing and data analysis.</li>
+      <li>Java: Used for large-scale applications and natural language processing.</li>
+      <li>C++: Powers high-performance AI programs and real-time systems.</li>
+      <li>Julia: Emerging language for high-speed mathematical computing.</li>
+    </ul>
+  </section>
+
+  <section id="ethics">
+    <h2>Ethics in AI</h2>
+    <p>AI raises important ethical considerations that must be addressed responsibly.</p>
+    <ul>
+      <li>Bias and Fairness: Ensuring AI decisions are impartial and equitable.</li>
+      <li>Privacy: Protecting sensitive user data used in AI systems.</li>
+      <li>Accountability: Determining responsibility for AI decisions.</li>
+      <li>Transparency: Making AI models understandable and explainable.</li>
+      <li>Job Impact: Addressing concerns about automation and workforce shifts.</li>
+    </ul>
+  </section>
+
+  <section id="future">
+    <h2>Future of AI</h2>
+    <p>AI continues to grow and shape the world in new ways.</p>
+    <ul>
+      <li>Advances in Natural Language Processing and conversational AI.</li>
+      <li>Greater integration in everyday smart devices and homes.</li>
+      <li>Expansion of autonomous systems like drones and robots.</li>
+      <li>Stronger collaboration between humans and machines.</li>
+      <li>Increased focus on ethical AI and global regulations.</li>
+    </ul>
+  </section>
+  <section id="video">
+  <video src="https://youtu.be/nVyD6THcvDQ" width="600" controls></video>  
+  </section>
+
+  <footer>&copy; 2025 Artificial Intelligence Notes | All rights reserved.</footer>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-8 flex flex-col items-center justify-center min-h-screen">
+        <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-lg text-center">
+            <h1 class="text-4xl font-bold text-blue-600 mb-4">Welcome to the Homepage</h1>
+            <p class="text-lg text-gray-600 mb-6">This is your main page. Navigate to other sections below.</p>
+            
+            <div class="flex flex-col space-y-4">
+                <a href="about.html" class="bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-600 transition-colors duration-300 transform hover:scale-105">
+                    Go to About Page
+                </a>
+                <a href="projects/project1.html" class="bg-purple-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-purple-600 transition-colors duration-300 transform hover:scale-105">
+                    View Project 1
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

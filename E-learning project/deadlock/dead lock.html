@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload & Send File Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .upload-box {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #0d4cd4;
+    }
+
+    input[type="file"], input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background: #1eaf73;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #0d4cd4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="upload-box">
+    <h2>Upload & Send File</h2>
+    <p>Select a file and it will be emailed to me.</p>
+
+    <!-- Replace "your_form_id" with the one from Formspree -->
+    <form action="https://formspree.io/f/your_form_id" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <button type="submit">Send File</button>
+    </form>
+  </div>
+
+</body>
+</html>
