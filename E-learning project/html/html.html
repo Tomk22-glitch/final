@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Complete Notes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background: #0077cc;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: #222;
+      color: white;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 1rem;
+      background: white;
+    }
+    h2 {
+      margin-top: 2rem;
+      border-bottom: 2px solid #0077cc;
+      padding-bottom: 5px;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    code {
+      color: #c7254e;
+      background: #f9f2f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0077cc;
+      color: white;
+      margin-top: 2rem;
+    }
+    /* Progress bar */
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background: #0077cc;
+      width: 0%;
+      z-index: 2000;
+    }
+    /* Dark mode */
+    body.dark {
+      background: #1e1e1e;
+      color: #ddd;
+    }
+    body.dark .container {
+      background: #2c2c2c;
+    }
+    body.dark pre {
+      background: #444;
+    }
+    .btns {
+      margin-top: 1rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      margin: 0.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .dark-toggle {
+      background: #444;
+      color: white;
+    }
+    .download {
+      background: #0077cc;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="progressBar"></div>
+
+  <header>
+    <h1>📘 HTML Complete Notes</h1>
+    <p>From Basics to Advanced</p>
+  </header>
+
+  <nav>
+    <div>
+      <a href="#intro">Intro</a>
+      <a href="#basic">Basics</a>
+      <a href="#forms">Forms</a>
+      <a href="#media">Media</a>
+      <a href="#tables">Tables</a>
+      <a href="#semantic">Semantic</a>
+      <a href="#advanced">Advanced</a>
+    </div>
+    <button class="dark-toggle" onclick="toggleDark()">🌙</button>
+  </nav>
+
+  <div class="container">
+    <div class="btns">
+      <button class="download" onclick="downloadHTML()">⬇️ Download HTML</button>
+      <button class="download" onclick="window.print()">⬇️ Save as PDF</button>
+    </div>
+
+    <h2 id="intro">1. Introduction to HTML</h2>
+    <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages.</p>
+
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h2 id="basic">2. Basic Elements</h2>
+    <ul>
+      <li><code>&lt;h1&gt; - &lt;h6&gt;</code>: Headings</li>
+      <li><code>&lt;p&gt;</code>: Paragraphs</li>
+      <li><code>&lt;a href="url"&gt;</code>: Links</li>
+      <li><code>&lt;img src="image.jpg"&gt;</code>: Images</li>
+    </ul>
+
+    <pre><code>&lt;h1&gt;Big Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;a href="https://example.com"&gt;Click me&lt;/a&gt;
+&lt;img src="photo.jpg" alt="Sample"&gt;</code></pre>
+
+    <h2 id="forms">3. Forms</h2>
+    <p>HTML forms allow user input.</p>
+
+    <pre><code>&lt;form action="/submit" method="POST"&gt;
+  &lt;label&gt;Name:&lt;/label&gt;
+  &lt;input type="text" name="name"&gt;
+  &lt;input type="submit" value="Send"&gt;
+&lt;/form&gt;</code></pre>
+
+    <h2 id="media">4. Media Elements</h2>
+    <pre><code>&lt;audio controls&gt;
+  &lt;source src="song.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;video width="320" height="240" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+
+    <h2 id="tables">5. Tables</h2>
+    <pre><code>&lt;table border="1"&gt;
+  &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Tom&lt;/td&gt;&lt;td&gt;25&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+    <h2 id="semantic">6. Semantic HTML</h2>
+    <p>Semantic tags give meaning to web structure.</p>
+    <ul>
+      <li><code>&lt;header&gt;</code></li>
+      <li><code>&lt;footer&gt;</code></li>
+      <li><code>&lt;article&gt;</code></li>
+      <li><code>&lt;section&gt;</code></li>
+    </ul>
+
+    <h2 id="advanced">7. Advanced Topics</h2>
+    <pre><code>&lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+
+&lt;script&gt;
+let c = document.getElementById("myCanvas");
+let ctx = c.getContext("2d");
+ctx.fillStyle = "red";
+ctx.fillRect(20,20,150,50);
+&lt;/script&gt;</code></pre>
+  </div>
+
+  <footer>
+    <p>© 2025 HTML Notes | Built for learners 🚀</p>
+  </footer>
+
+  <script>
+    // Progress bar
+    window.onscroll = function() {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    };
+
+    // Dark mode toggle
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+    }
+
+    // Download HTML
+    function downloadHTML() {
+      const content = document.documentElement.outerHTML;
+      const blob = new Blob([content], {type: "text/html"});
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "html-complete-notes.html";
+      a.click();
+    }
+  </script>
+</body>
+</html>
