@@ -148,32 +148,36 @@
     }
 
     @media(max-width: 600px) {
-      body {
-        padding: 30px 15px;
-      }
-    }
+  body {
+    padding: 10px;
+  }
 
-    @media print {
-      body {
-        background: white;
-        color: black;
-      }
+  section {
+    padding: 15px;
+  }
 
-      button,
-      #progress-bar {
-        display: none;
-      }
+  nav {
+    padding: 15px;
+  }
 
-      nav {
-        background: none;
-        color: black;
-      }
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
 
-      nav a {
-        color: black;
-        text-decoration: none;
-      }
-    }
+  h1 {
+    font-size: 1.6em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  ul {
+    margin-left: 20px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -266,7 +270,7 @@
 
   <section id="video">
     <h2>6. Video </h2>
-    <video src="internet.mp4" width="560" height="315" controls ></video>
+<video src="internet.mp4" controls style="max-width:100%; height:auto;"></video>
   </section>
 
   <footer>© 2025 Internet Today Notes | Created for Learning</footer>
