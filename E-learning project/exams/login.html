@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Animated Login Page</title>
+  <style>
+/* 🔥 Background animation */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #1a1a1a, #222, #111, #333);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  font-family: Arial, sans-serif;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🔥 Login box with glowing border animation */
+.login-container {
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 15px;
+  width: 320px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+
+  /* Box shadow glow */
+  box-shadow: 0 0 20px rgba(255, 136, 0, 0.6),
+              0 0 40px rgba(255, 0, 0, 0.4),
+              0 0 60px rgba(255, 204, 0, 0.2);
+
+  /* Animate border glow colors */
+  animation: glow 6s linear infinite;
+  transition: transform 0.4s ease;
+}
+
+/* 🔥 Pop-up effect on hover */
+.login-container:hover {
+  transform: scale(1.08);
+}
+
+/* Glow animation (yellow → orange → red) */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 200, 0, 0.6),
+                0 0 40px rgba(255, 150, 0, 0.4),
+                0 0 60px rgba(255, 80, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 120, 0, 0.7),
+                0 0 50px rgba(255, 70, 0, 0.5),
+                0 0 75px rgba(200, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 200, 0, 0.6),
+                0 0 40px rgba(255, 150, 0, 0.4),
+                0 0 60px rgba(255, 80, 0, 0.2);
+  }
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #ff9900;
+  text-shadow: 0 0 10px #ff6600;
+}
+
+.login-container input,
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.login-container input:focus {
+  border: 1px solid #ff9900;
+  box-shadow: 0 0 10px #ff6600;
+}
+
+.login-container button {
+  background: #ff6600;
+  color: #111;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background: #ff3300;
+}
+
+#message {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+
+    </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p id="message"></p>
+  </div>
+        <script src="login.js"></script>
+
+
+
+</body>
+</html>

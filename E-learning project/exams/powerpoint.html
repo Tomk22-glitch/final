@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerPoint 50-Question Exam (Orange)</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 950px;
+      background: #fff3e6;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d35400;
+      border-bottom: 3px solid #e67e22;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 { color: #111; margin-top: 40px; margin-bottom: 15px; }
+    section { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 40px; }
+    label { display:block; margin:6px 0; cursor:pointer; }
+    textarea { width:100%; min-height:80px; padding:8px; border-radius:6px; border:1px solid #ccc; }
+    input[type="text"] { width:100%; padding:10px; border-radius:6px; border:1px solid #ccc; }
+    button { margin: 15px 8px; padding: 12px 24px; background: #e67e22; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: larger; }
+    button:hover { background: #d35400; }
+    .confirmation { display:none; background:#fff7ea; border:1px solid #e7a85b; padding:20px; border-radius:8px; color:#a35100; font-weight:bold; text-align:center; margin:30px 0; }
+    footer { text-align:center; color:#555; font-size:0.9em; margin:60px 0 20px; }
+    @media(max-width:600px){ body{padding:15px} button{width:100%;} }
+    #result { margin-top:12px; font-weight:600; color:#d35400; }
+
+ #timer {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5em;
+            text-align: center;
+            font-weight: bold;
+            color: #d32f2f;
+            background-color: #ffebee;
+            padding: 10px;
+            border-radius: 8px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+  </style>
+</head>
+<body>
+  <h1>PowerPoint — 50 Question Exam</h1>
+    <div id="timer">Time Remaining: 35:00</div>
+
+  <section>
+    <h2>Student Information</h2>
+    <label for="studentName">Your Name:</label>
+    <input type="text" id="studentName" name="studentName" placeholder="Enter your full name">
+  </section>
+
+  <section>
+    <h2>Section A — Multiple Choice (Q1–Q30)</h2>
+    <form id="mcqForm">
+
+      <div>
+        <p><strong>1. Which tab is used to change slide layouts and themes?</strong></p>
+        <label><input type="radio" name="q1" value="a"> Home</label>
+        <label><input type="radio" name="q1" value="b"> View</label>
+        <label><input type="radio" name="q1" value="c"> Design</label>
+        <label><input type="radio" name="q1" value="d"> Transitions</label>
+      </div>
+
+      <div>
+        <p><strong>2. What is the shortcut to start a slideshow from the beginning?</strong></p>
+        <label><input type="radio" name="q2" value="a"> F5</label>
+        <label><input type="radio" name="q2" value="b"> Shift+F5</label>
+        <label><input type="radio" name="q2" value="c"> Ctrl+S</label>
+        <label><input type="radio" name="q2" value="d"> Alt+F5</label>
+      </div>
+
+      <div>
+        <p><strong>3. Which feature applies motion between whole slides?</strong></p>
+        <label><input type="radio" name="q3" value="a"> Animation</label>
+        <label><input type="radio" name="q3" value="b"> Transition</label>
+        <label><input type="radio" name="q3" value="c"> Slide Master</label>
+        <label><input type="radio" name="q3" value="d"> Notes Page</label>
+      </div>
+
+      <div>
+        <p><strong>4. The Slide Master is used to:</strong></p>
+        <label><input type="radio" name="q4" value="a"> Edit a single slide only</label>
+        <label><input type="radio" name="q4" value="b"> Set global styles for all slides</label>
+        <label><input type="radio" name="q4" value="c"> Run the slideshow</label>
+        <label><input type="radio" name="q4" value="d"> Insert video</label>
+      </div>
+
+      <div>
+        <p><strong>5. Which view shows thumbnails for quick reordering?</strong></p>
+        <label><input type="radio" name="q5" value="a"> Notes Page</label>
+        <label><input type="radio" name="q5" value="b"> Slide Sorter</label>
+        <label><input type="radio" name="q5" value="c"> Reading View</label>
+        <label><input type="radio" name="q5" value="d"> Slide Show</label>
+      </div>
+
+      <div>
+        <p><strong>6. Which file extension indicates a PowerPoint presentation (modern)?</strong></p>
+        <label><input type="radio" name="q6" value="a"> .ppt</label>
+        <label><input type="radio" name="q6" value="b"> .pptx</label>
+        <label><input type="radio" name="q6" value="c"> .ppsx</label>
+        <label><input type="radio" name="q6" value="d"> .pptm</label>
+      </div>
+
+      <div>
+        <p><strong>7. Which option inserts speaker notes below a slide?</strong></p>
+        <label><input type="radio" name="q7" value="a"> View &gt; Notes</label>
+        <label><input type="radio" name="q7" value="b"> Insert &gt; Notes</label>
+        <label><input type="radio" name="q7" value="c"> Design &gt; Notes</label>
+        <label><input type="radio" name="q7" value="d"> Transitions &gt; Notes</label>
+      </div>
+
+      <div>
+        <p><strong>8. What is the purpose of Presenter View?</strong></p>
+        <label><input type="radio" name="q8" value="a"> To edit slides only</label>
+        <label><input type="radio" name="q8" value="b"> To see notes and upcoming slides while presenting</label>
+        <label><input type="radio" name="q8" value="c"> To print handouts</label>
+        <label><input type="radio" name="q8" value="d"> To export as video</label>
+      </div>
+
+      <div>
+        <p><strong>9. Which feature lets you apply formatting of one object to another?</strong></p>
+        <label><input type="radio" name="q9" value="a"> Format Painter</label>
+        <label><input type="radio" name="q9" value="b"> Designer</label>
+        <label><input type="radio" name="q9" value="c"> Animation Pane</label>
+        <label><input type="radio" name="q9" value="d"> Slide Master</label>
+      </div>
+
+      <div>
+        <p><strong>10. How do you make a slide not appear during a presentation?</strong></p>
+        <label><input type="radio" name="q10" value="a"> Delete it</label>
+        <label><input type="radio" name="q10" value="b"> Mark it as hidden</label>
+        <label><input type="radio" name="q10" value="c"> Move it to the end</label>
+        <label><input type="radio" name="q10" value="d"> Lock it</label>
+      </div>
+
+      <div>
+        <p><strong>11. Which object is best for creating an organizational chart?</strong></p>
+        <label><input type="radio" name="q11" value="a"> SmartArt</label>
+        <label><input type="radio" name="q11" value="b"> Table</label>
+        <label><input type="radio" name="q11" value="c"> Text box</label>
+        <label><input type="radio" name="q11" value="d"> Chart</label>
+      </div>
+
+      <div>
+        <p><strong>12. What does the Rehearse Timings feature do?</strong></p>
+        <label><input type="radio" name="q12" value="a"> Records slide durations and timings</label>
+        <label><input type="radio" name="q12" value="b"> Edits slide content</label>
+        <label><input type="radio" name="q12" value="c"> Exports to PDF</label>
+        <label><input type="radio" name="q12" value="d"> Inserts audio</label>
+      </div>
+
+      <div>
+        <p><strong>13. Which type of transition makes slides appear to dissolve?</strong></p>
+        <label><input type="radio" name="q13" value="a"> Wipe</label>
+        <label><input type="radio" name="q13" value="b"> Fade</label>
+        <label><input type="radio" name="q13" value="c"> Fly In</label>
+        <label><input type="radio" name="q13" value="d"> Split</label>
+      </div>
+
+      <div>
+        <p><strong>14. To insert a chart from Excel into PowerPoint you would:</strong></p>
+        <label><input type="radio" name="q14" value="a"> Copy and paste or Insert &gt; Chart</label>
+        <label><input type="radio" name="q14" value="b"> Use Slide Master</label>
+        <label><input type="radio" name="q14" value="c"> Use Rehearse Timings</label>
+        <label><input type="radio" name="q14" value="d"> Use Designer</label>
+      </div>
+
+      <div>
+        <p><strong>15. What is an action button used for?</strong></p>
+        <label><input type="radio" name="q15" value="a"> To insert decorative shapes</label>
+        <label><input type="radio" name="q15" value="b"> To add interactivity like linking to another slide or running a program</label>
+        <label><input type="radio" name="q15" value="c"> To change the theme</label>
+        <label><input type="radio" name="q15" value="d"> To edit master slides</label>
+      </div>
+
+      <div>
+        <p><strong>16. Which option exports a presentation as a video?</strong></p>
+        <label><input type="radio" name="q16" value="a"> File &gt; Export &gt; Create a Video</label>
+        <label><input type="radio" name="q16" value="b"> Insert &gt; Video</label>
+        <label><input type="radio" name="q16" value="c"> Slide Show &gt; Record Slide Show</label>
+        <label><input type="radio" name="q16" value="d"> Design &gt; Themes</label>
+      </div>
+
+      <div>
+        <p><strong>17. Which tool helps design slide layouts and suggests layouts based on content?</strong></p>
+        <label><input type="radio" name="q17" value="a"> Format Painter</label>
+        <label><input type="radio" name="q17" value="b"> Designer</label>
+        <label><input type="radio" name="q17" value="c"> Slide Master</label>
+        <label><input type="radio" name="q17" value="d"> Animation Pane</label>
+      </div>
+
+      <div>
+        <p><strong>18. Which panel shows the order and timing of animations?</strong></p>
+        <label><input type="radio" name="q18" value="a"> Selection Pane</label>
+        <label><input type="radio" name="q18" value="b"> Animation Pane</label>
+        <label><input type="radio" name="q18" value="c"> Slide Sorter</label>
+        <label><input type="radio" name="q18" value="d"> Notes Pane</label>
+      </div>
+
+      <div>
+        <p><strong>19. What does 'Compress Media' do?</strong></p>
+        <label><input type="radio" name="q19" value="a"> Reduces file size of embedded audio and video</label>
+        <label><input type="radio" name="q19" value="b"> Encrypts media files</label>
+        <label><input type="radio" name="q19" value="c"> Converts media to images</label>
+        <label><input type="radio" name="q19" value="d"> Removes audio from the presentation</label>
+      </div>
+
+      <div>
+        <p><strong>20. Where do you set rehearse timings and record narration?</strong></p>
+        <label><input type="radio" name="q20" value="a"> Slide Show tab</label>
+        <label><input type="radio" name="q20" value="b"> Insert tab</label>
+        <label><input type="radio" name="q20" value="c"> Review tab</label>
+        <label><input type="radio" name="q20" value="d"> Design tab</label>
+      </div>
+
+      <div>
+        <p><strong>21. Which option prints multiple slides per page (handouts)?</strong></p>
+        <label><input type="radio" name="q21" value="a"> File &gt; Print &gt; Full Page Slides</label>
+        <label><input type="radio" name="q21" value="b"> File &gt; Print &gt; Handouts</label>
+        <label><input type="radio" name="q21" value="c"> View &gt; Handout Master</label>
+        <label><input type="radio" name="q21" value="d"> Insert &gt; Handout</label>
+      </div>
+
+      <div>
+        <p><strong>22. Which feature helps ensure slides are accessible to people with disabilities?</strong></p>
+        <label><input type="radio" name="q22" value="a"> Accessibility Checker</label>
+        <label><input type="radio" name="q22" value="b"> Slide Master</label>
+        <label><input type="radio" name="q22" value="c"> Rehearse Timings</label>
+        <label><input type="radio" name="q22" value="d"> Compress Media</label>
+      </div>
+
+      <div>
+        <p><strong>23. What is a slide layout?</strong></p>
+        <label><input type="radio" name="q23" value="a"> The paper size of a slide</label>
+        <label><input type="radio" name="q23" value="b"> Predefined arrangement of placeholders on a slide</label>
+        <label><input type="radio" name="q23" value="c"> A type of animation</label>
+        <label><input type="radio" name="q23" value="d"> A transition style</label>
+      </div>
+
+      <div>
+        <p><strong>24. How do you insert speaker notes for printing?</strong></p>
+        <label><input type="radio" name="q24" value="a"> File &gt; Print &gt; Notes Pages</label>
+        <label><input type="radio" name="q24" value="b"> File &gt; Export &gt; Notes</label>
+        <label><input type="radio" name="q24" value="c"> View &gt; Notes Master</label>
+        <label><input type="radio" name="q24" value="d"> Insert &gt; Notes</label>
+      </div>
+
+      <div>
+        <p><strong>25. Embedding fonts in a presentation ensures:</strong></p>
+        <label><input type="radio" name="q25" value="a"> The file will be smaller</label>
+        <label><input type="radio" name="q25" value="b"> Fonts display correctly on other computers</label>
+        <label><input type="radio" name="q25" value="c"> The presentation becomes read-only</label>
+        <label><input type="radio" name="q25" value="d"> Animations run faster</label>
+      </div>
+
+      <div>
+        <p><strong>26. Which feature allows collaboration in real-time on a presentation?</strong></p>
+        <label><input type="radio" name="q26" value="a"> Comments only</label>
+        <label><input type="radio" name="q26" value="b"> Co-authoring (shared online document)</label>
+        <label><input type="radio" name="q26" value="c"> Slide Master</label>
+        <label><input type="radio" name="q26" value="d"> Presenter View</label>
+      </div>
+
+      <div>
+        <p><strong>27. What is the purpose of the Notes Master?</strong></p>
+        <label><input type="radio" name="q27" value="a"> Edit how printed notes pages will appear</label>
+        <label><input type="radio" name="q27" value="b"> Edit slide transitions</label>
+        <label><input type="radio" name="q27" value="c"> Manage animations</label>
+        <label><input type="radio" name="q27" value="d"> Insert charts</label>
+      </div>
+
+      <div>
+        <p><strong>28. Which view lets you see slide and speaker notes together for editing?</strong></p>
+        <label><input type="radio" name="q28" value="a"> Normal View</label>
+        <label><input type="radio" name="q28" value="b"> Notes Page</label>
+        <label><input type="radio" name="q28" value="c"> Slide Sorter</label>
+        <label><input type="radio" name="q28" value="d"> Reading View</label>
+      </div>
+
+      <div>
+        <p><strong>29. Which option allows you to add a hyperlink to a slide?</strong></p>
+        <label><input type="radio" name="q29" value="a"> Insert &gt; Hyperlink</label>
+        <label><input type="radio" name="q29" value="b"> Design &gt; Hyperlink</label>
+        <label><input type="radio" name="q29" value="c"> Transitions &gt; Hyperlink</label>
+        <label><input type="radio" name="q29" value="d"> Slide Show &gt; Hyperlink</label>
+      </div>
+
+      <div>
+        <p><strong>30. What does "Hide Slide" do?</strong></p>
+        <label><input type="radio" name="q30" value="a"> Deletes the slide from the deck</label>
+        <label><input type="radio" name="q30" value="b"> Keeps the slide in the file but skips it during presentation</label>
+        <label><input type="radio" name="q30" value="c"> Makes the slide invisible in edit view</label>
+        <label><input type="radio" name="q30" value="d"> Locks the slide for editing</label>
+      </div>
+
+    </form>
+  </section>
+
+  <section>
+    <h2>Section B — Written (Q31–Q50)</h2>
+    <form id="writtenForm">
+
+      <div>
+        <p><strong>31. Explain the difference between slide transitions and object animations.</strong></p>
+        <textarea name="q31" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>32. Describe how to use Slide Master to create a consistent look across slides.</strong></p>
+        <textarea name="q32" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>33. How would you insert and format a table in PowerPoint?</strong></p>
+        <textarea name="q33" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>34. Explain steps to record and include a narration in your presentation.</strong></p>
+        <textarea name="q34" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>35. What considerations should you make when designing slides for accessibility?</strong></p>
+        <textarea name="q35" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>36. Describe how to export a presentation as a PDF and why you might do this.</strong></p>
+        <textarea name="q36" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>37. How can you embed a video so it plays within the presentation?</strong></p>
+        <textarea name="q37" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>38. Explain how to use Designer to improve slide layout.</strong></p>
+        <textarea name="q38" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>39. Describe how to print speaker notes and why they are useful.</strong></p>
+        <textarea name="q39" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>40. Explain how to create custom animations and control their order.</strong></p>
+        <textarea name="q40" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>41. How would you compress media in a presentation and when is this necessary?</strong></p>
+        <textarea name="q41" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>42. Describe steps to set up a self-running kiosk presentation.</strong></p>
+        <textarea name="q42" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>43. Explain how to collaborate with others on the same PowerPoint file.</strong></p>
+        <textarea name="q43" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>44. What is the purpose of slide sections and how do you use them?</strong></p>
+        <textarea name="q44" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>45. Explain how to rehearse timings and export those timings with the presentation.</strong></p>
+        <textarea name="q45" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>46. How do you ensure fonts display correctly on other computers?</strong></p>
+        <textarea name="q46" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>47. Describe how to add and manage comments for review.</strong></p>
+        <textarea name="q47" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>48. Explain steps to create an interactive hyperlink menu within a presentation.</strong></p>
+        <textarea name="q48" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>49. How can you use slide layouts to speed up slide creation?</strong></p>
+        <textarea name="q49" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div>
+        <p><strong>50. Describe best practices for preparing slides for a live presentation.</strong></p>
+        <textarea name="q50" placeholder="Your answer..."></textarea>
+      </div>
+
+    </form>
+  </section>
+
+  <div style="text-align:center;">
+    <button id="checkBtn">Check Answers</button>
+    <button id="submitBtn">Submit All Answers</button>
+  </div>
+
+  <div class="confirmation" id="confirmation">✅ Thank you — your answers were submitted.</div>
+
+  <section>
+    <h2>Results</h2>
+    <p id="result">Scoring not set (no correct answers configured).</p>
+  </section>
+
+  <footer>PowerPoint Exam © 2025</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+         <script src="exam_script.js"></script>
+
+</body>
+</html>

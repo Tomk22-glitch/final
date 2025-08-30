@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MS Word 50-Question Exam</title>
+
+  <!-- EmailJS (placeholders used; replace before using) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+
+  <style>
+    /* === Provided Styling === */
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 950px;
+      background: #dee5f0;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #34495e;
+      border-bottom: 3px solid #2980b9;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #111111;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    p { margin-bottom: 20px; }
+    ul { margin-left: 30px; margin-bottom: 25px; }
+    li { margin-bottom: 12px; }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      transition: all 0.6s ease-out;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    textarea { width: 100%; min-height: 70px; margin-bottom: 14px; padding: 8px; border-radius: 6px; border: 1px solid #ccc; }
+    label { display: block; margin-bottom: 6px; cursor: pointer; }
+    .mcq label { display: block; margin:6px 0; }
+
+    button {
+      margin: 15px 8px;
+      padding: 12px 24px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: larger;
+    }
+
+    button:hover { background: #3498db; }
+    footer { text-align: center; color: #555; font-size: 0.9em; margin: 60px 0 20px; }
+
+    #progress-bar { position: fixed; top: 0; left: 0; height: 5px; background: #2980b9; width: 0%; z-index: 9999; }
+
+    @media(max-width:600px){
+      body{ padding:10px; }
+      section{ padding:15px; }
+      button{ width:100%; margin:10px 0; }
+      h1{ font-size:1.6em; }
+      h2{ font-size:1.2em; }
+    }
+
+    /* small result style */
+    #result { margin-top: 12px; font-weight: bold; color: #2c3e50; }
+
+      #timer {
+            position: fixed; /* Fixes the timer position on the screen */
+            top: 20px; /* Aligns the timer 20px from the top */
+            right: 20px; /* Aligns the timer 20px from the right */
+            font-size: 1.5em;
+            text-align: center;
+            font-weight: bold;
+            color: #d32f2f;
+            background-color: #ffebee;
+            padding: 10px;
+            border-radius: 8px;
+            z-index: 1000; /* Ensures the timer is on top of other elements */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+  </style>
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <h1>MS Word 50-Question Exam</h1>
+    <div id="timer">Time Remaining: 35:00</div>
+
+  <form id="quizForm">
+    <section>
+      <h2>Student Information</h2>
+      <label>Student Name: <input type="text" id="studentName" name="studentName" required style="padding:8px;border-radius:6px;border:1px solid #ccc;margin-top:8px;"></label>
+    </section>
+
+    <section>
+      <h2>Section A — Theory (Multiple Choice) </h2>
+      <ol>
+        <li class="mcq">
+          Which is the default file extension for Word 2016 documents?<br>
+          <label><input type="radio" name="q1" value="a"> a) .txt</label>
+          <label><input type="radio" name="q1" value="b"> b) .docx</label>
+          <label><input type="radio" name="q1" value="c"> c) .pdf</label>
+          <label><input type="radio" name="q1" value="d"> d) .doc</label>
+        </li>
+
+        <li class="mcq">
+          Shortcut key for inserting a page break?<br>
+          <label><input type="radio" name="q2" value="a"> a) Ctrl + Enter</label>
+          <label><input type="radio" name="q2" value="b"> b) Shift + Enter</label>
+          <label><input type="radio" name="q2" value="c"> c) Alt + P</label>
+          <label><input type="radio" name="q2" value="d"> d) Ctrl + Shift + P</label>
+        </li>
+
+        <li class="mcq">
+          Shortcut for bold text?<br>
+          <label><input type="radio" name="q3" value="a"> a) Ctrl + B</label>
+          <label><input type="radio" name="q3" value="b"> b) Ctrl + I</label>
+          <label><input type="radio" name="q3" value="c"> c) Ctrl + U</label>
+          <label><input type="radio" name="q3" value="d"> d) Ctrl + L</label>
+        </li>
+
+        <li class="mcq">
+          Which feature automatically corrects common spelling errors?<br>
+          <label><input type="radio" name="q4" value="a"> a) Grammar Check</label>
+          <label><input type="radio" name="q4" value="b"> b) AutoCorrect</label>
+          <label><input type="radio" name="q4" value="c"> c) Track Changes</label>
+          <label><input type="radio" name="q4" value="d"> d) Thesaurus</label>
+        </li>
+
+        <li class="mcq">
+          Which tab contains the option to add headers and footers?<br>
+          <label><input type="radio" name="q5" value="a"> a) Insert</label>
+          <label><input type="radio" name="q5" value="b"> b) Home</label>
+          <label><input type="radio" name="q5" value="c"> c) Design</label>
+          <label><input type="radio" name="q5" value="d"> d) Review</label>
+        </li>
+
+        <li class="mcq">
+          What is the default font in MS Word 2016 and later versions?<br>
+          <label><input type="radio" name="q6" value="a"> a) Times New Roman</label>
+          <label><input type="radio" name="q6" value="b"> b) Arial</label>
+          <label><input type="radio" name="q6" value="c"> c) Calibri</label>
+          <label><input type="radio" name="q6" value="d"> d) Verdana</label>
+        </li>
+
+        <li class="mcq">
+          Which shortcut key inserts a hyperlink?<br>
+          <label><input type="radio" name="q7" value="a"> a) Ctrl + K</label>
+          <label><input type="radio" name="q7" value="b"> b) Ctrl + H</label>
+          <label><input type="radio" name="q7" value="c"> c) Ctrl + L</label>
+          <label><input type="radio" name="q7" value="d"> d) Ctrl + M</label>
+        </li>
+
+        <li class="mcq">
+          Which option allows you to track changes made by different reviewers?<br>
+          <label><input type="radio" name="q8" value="a"> a) Spell Check</label>
+          <label><input type="radio" name="q8" value="b"> b) Track Changes</label>
+          <label><input type="radio" name="q8" value="c"> c) AutoFormat</label>
+          <label><input type="radio" name="q8" value="d"> d) Thesaurus</label>
+        </li>
+
+        <li class="mcq">
+          Which shortcut can be used to align text to the center?<br>
+          <label><input type="radio" name="q9" value="a"> a) Ctrl + L</label>
+          <label><input type="radio" name="q9" value="b"> b) Ctrl + R</label>
+          <label><input type="radio" name="q9" value="c"> c) Ctrl + E</label>
+          <label><input type="radio" name="q9" value="d"> d) Ctrl + J</label>
+        </li>
+
+        <li class="mcq">
+          What does “Ctrl + Z” do in MS Word?<br>
+          <label><input type="radio" name="q10" value="a"> a) Copy</label>
+          <label><input type="radio" name="q10" value="b"> b) Undo</label>
+          <label><input type="radio" name="q10" value="c"> c) Paste</label>
+          <label><input type="radio" name="q10" value="d"> d) Save</label>
+        </li>
+
+        <li class="mcq">
+          To find a word or phrase in a document, you use:<br>
+          <label><input type="radio" name="q11" value="a"> a) Replace</label>
+          <label><input type="radio" name="q11" value="b"> b) Find</label>
+          <label><input type="radio" name="q11" value="c"> c) Go To</label>
+          <label><input type="radio" name="q11" value="d"> d) Select</label>
+        </li>
+
+        <li class="mcq">
+          Which tab contains the 'Table' option?<br>
+          <label><input type="radio" name="q12" value="a"> a) Insert</label>
+          <label><input type="radio" name="q12" value="b"> b) View</label>
+          <label><input type="radio" name="q12" value="c"> c) Page Layout</label>
+          <label><input type="radio" name="q12" value="d"> d) Review</label>
+        </li>
+
+        <li class="mcq">
+          What is the maximum number of columns you can insert in a table by default?<br>
+          <label><input type="radio" name="q13" value="a"> a) 63</label>
+          <label><input type="radio" name="q13" value="b"> b) 50</label>
+          <label><input type="radio" name="q13" value="c"> c) 10</label>
+          <label><input type="radio" name="q13" value="d"> d) 100</label>
+        </li>
+
+        <li class="mcq">
+          What is a 'template' in MS Word?<br>
+          <label><input type="radio" name="q14" value="a"> a) A predefined document format</label>
+          <label><input type="radio" name="q14" value="b"> b) A text box</label>
+          <label><input type="radio" name="q14" value="c"> c) A font style</label>
+          <label><input type="radio" name="q14" value="d"> d) A type of page layout</label>
+        </li>
+
+        <li class="mcq">
+          Which feature is used to create a list with bullets?<br>
+          <label><input type="radio" name="q15" value="a"> a) Bullets</label>
+          <label><input type="radio" name="q15" value="b"> b) Numbering</label>
+          <label><input type="radio" name="q15" value="c"> c) Borders</label>
+          <label><input type="radio" name="q15" value="d"> d) Shading</label>
+        </li>
+
+        <li class="mcq">
+          What is the keyboard shortcut to save a document?<br>
+          <label><input type="radio" name="q16" value="a"> a) Ctrl + P</label>
+          <label><input type="radio" name="q16" value="b"> b) Ctrl + S</label>
+          <label><input type="radio" name="q16" value="c"> c) Ctrl + O</label>
+          <label><input type="radio" name="q16" value="d"> d) Ctrl + N</label>
+        </li>
+
+        <li class="mcq">
+          How do you create a new document?<br>
+          <label><input type="radio" name="q17" value="a"> a) Ctrl + N</label>
+          <label><input type="radio" name="q17" value="b"> b) Ctrl + O</label>
+          <label><input type="radio" name="q17" value="c"> c) Ctrl + S</label>
+          <label><input type="radio" name="q17" value="d"> d) Ctrl + P</label>
+        </li>
+
+        <li class="mcq">
+          What is the function of the ‘Review’ tab?<br>
+          <label><input type="radio" name="q18" value="a"> a) Insert graphics</label>
+          <label><input type="radio" name="q18" value="b"> b) Spell check and comments</label>
+          <label><input type="radio" name="q18" value="c"> c) Format text</label>
+          <label><input type="radio" name="q18" value="d"> d) Page layout</label>
+        </li>
+
+        <li class="mcq">
+          Which tool helps you check the meaning of a word?<br>
+          <label><input type="radio" name="q19" value="a"> a) Thesaurus</label>
+          <label><input type="radio" name="q19" value="b"> b) Spell checker</label>
+          <label><input type="radio" name="q19" value="c"> c) Grammar check</label>
+          <label><input type="radio" name="q19" value="d"> d) Dictionary</label>
+        </li>
+
+        <li class="mcq">
+          Which tab contains the 'Page Setup' options (margins, orientation)?<br>
+          <label><input type="radio" name="q20" value="a"> a) Layout</label>
+          <label><input type="radio" name="q20" value="b"> b) Insert</label>
+          <label><input type="radio" name="q20" value="c"> c) View</label>
+          <label><input type="radio" name="q20" value="d"> d) File</label>
+        </li>
+
+        <li class="mcq">
+          How can you insert a picture into a document?<br>
+          <label><input type="radio" name="q21" value="a"> a) Insert &gt; Pictures</label>
+          <label><input type="radio" name="q21" value="b"> b) Home &gt; Pictures</label>
+          <label><input type="radio" name="q21" value="c"> c) Review &gt; Pictures</label>
+          <label><input type="radio" name="q21" value="d"> d) View &gt; Pictures</label>
+        </li>
+
+        <li class="mcq">
+          Which of the following is NOT a view in MS Word?<br>
+          <label><input type="radio" name="q22" value="a"> a) Web Layout</label>
+          <label><input type="radio" name="q22" value="b"> b) Print Layout</label>
+          <label><input type="radio" name="q22" value="c"> c) Slide Show</label>
+          <label><input type="radio" name="q22" value="d"> d) Outline</label>
+        </li>
+
+        <li class="mcq">
+          How do you add a comment to a document?<br>
+          <label><input type="radio" name="q23" value="a"> a) Insert &gt; Comment</label>
+          <label><input type="radio" name="q23" value="b"> b) Review &gt; New Comment</label>
+          <label><input type="radio" name="q23" value="c"> c) Home &gt; Comment</label>
+          <label><input type="radio" name="q23" value="d"> d) File &gt; Comment</label>
+        </li>
+
+        <li class="mcq">
+          Which tab allows you to change page orientation?<br>
+          <label><input type="radio" name="q24" value="a"> a) Insert</label>
+          <label><input type="radio" name="q24" value="b"> b) Layout</label>
+          <label><input type="radio" name="q24" value="c"> c) View</label>
+          <label><input type="radio" name="q24" value="d"> d) Review</label>
+        </li>
+
+        <li class="mcq">
+          What does 'Track Changes' do?<br>
+          <label><input type="radio" name="q25" value="a"> a) Checks spelling</label>
+          <label><input type="radio" name="q25" value="b"> b) Tracks page views</label>
+          <label><input type="radio" name="q25" value="c"> c) Changes font size automatically</label>
+          <label><input type="radio" name="q25" value="d"> d) Shows edits made to the document</label>
+        </li>
+
+        <li class="mcq">
+          Which of the following is used to adjust line spacing?<br>
+          <label><input type="radio" name="q26" value="a"> a) Paragraph group in Home tab</label>
+          <label><input type="radio" name="q26" value="b"> b) Font group in Home tab</label>
+          <label><input type="radio" name="q26" value="c"> c) Page Layout tab</label>
+          <label><input type="radio" name="q26" value="d"> d) Review tab</label>
+        </li>
+
+        <li class="mcq">
+          How do you select all the text in a document?<br>
+          <label><input type="radio" name="q27" value="a"> a) Ctrl + A</label>
+          <label><input type="radio" name="q27" value="b"> b) Ctrl + S</label>
+          <label><input type="radio" name="q27" value="c"> c) Ctrl + X</label>
+          <label><input type="radio" name="q27" value="d"> d) Ctrl + P</label>
+        </li>
+
+        <li class="mcq">
+          Which of the following is used to change the font color?<br>
+          <label><input type="radio" name="q28" value="a"> a) Page Layout tab</label>
+          <label><input type="radio" name="q28" value="b"> b) Font color button in Home tab</label>
+          <label><input type="radio" name="q28" value="c"> c) Review tab</label>
+          <label><input type="radio" name="q28" value="d"> d) Insert tab</label>
+        </li>
+
+        <li class="mcq">
+          What is the shortcut key for ‘Copy’?<br>
+          <label><input type="radio" name="q29" value="a"> a) Ctrl + X</label>
+          <label><input type="radio" name="q29" value="b"> b) Ctrl + C</label>
+          <label><input type="radio" name="q29" value="c"> c) Ctrl + V</label>
+          <label><input type="radio" name="q29" value="d"> d) Ctrl + P</label>
+        </li>
+
+        <li class="mcq">
+          What does the 'Undo' command do?<br>
+          <label><input type="radio" name="q30" value="a"> a) Reverses the last action</label>
+          <label><input type="radio" name="q30" value="b"> b) Deletes the document</label>
+          <label><input type="radio" name="q30" value="c"> c) Saves the document</label>
+          <label><input type="radio" name="q30" value="d"> d) Prints the document</label>
+        </li>
+      </ol>
+
+    
+    </section>
+
+    <section>
+      <h2>Section B — Practical (Written answers)</h2>
+      <ol start="31">
+        <li>
+          Open Microsoft Word and save the document as "MyName".<br>
+          <textarea name="q31" placeholder="Describe how you did this..."></textarea>
+        </li>
+
+        <li>
+          Create a new document, type your full name, and save it with your name.<br>
+          <textarea name="q32" placeholder="Describe the steps..."></textarea>
+        </li>
+
+        <li>
+          Copy a paragraph from the internet and paste it into your document.<br>
+          <textarea name="q33" placeholder="Describe what you did..."></textarea>
+        </li>
+
+        <li>
+          Cut some text and paste it in a new place.<br>
+          <textarea name="q34" placeholder="Explain the process..."></textarea>
+        </li>
+
+        <li>
+          Use the 'Undo' command to reverse your last action.<br>
+          <textarea name="q35" placeholder="Explain how you used Undo..."></textarea>
+        </li>
+
+        <li>
+          Use the 'Redo' command to redo the action you undid.<br>
+          <textarea name="q36" placeholder="Explain the steps..."></textarea>
+        </li>
+
+        <li>
+          Make your text bold and italic.<br>
+          <textarea name="q37" placeholder="How did you do it?"></textarea>
+        </li>
+
+        <li>
+          Change the font size of your text.<br>
+          <textarea name="q38" placeholder="Describe the method..."></textarea>
+        </li>
+
+        <li>
+          Insert a page break in your document.<br>
+          <textarea name="q39" placeholder="Explain how you inserted the page break..."></textarea>
+        </li>
+
+        <li>
+          Insert a header and footer.<br>
+          <textarea name="q40" placeholder="Describe the steps..."></textarea>
+        </li>
+
+        <li>
+          Add a bulleted list of 3 items.<br>
+          <textarea name="q41" placeholder="Explain how you created the list..."></textarea>
+        </li>
+
+        <li>
+          Align your text to the center.<br>
+          <textarea name="q42" placeholder="Describe what you did..."></textarea>
+        </li>
+
+        <li>
+          Insert a picture from your computer.<br>
+          <textarea name="q43" placeholder="Explain the process..."></textarea>
+        </li>
+
+        <li>
+          Create a table with 3 rows and 3 columns.<br>
+          <textarea name="q44" placeholder="Describe how you created the table..."></textarea>
+        </li>
+
+        <li>
+          Use 'Find and Replace' to change a word in your document.<br>
+          <textarea name="q45" placeholder="Explain how you did it..."></textarea>
+        </li>
+
+        <li>
+          Use 'Track Changes' to edit a document.<br>
+          <textarea name="q46" placeholder="Describe how you used Track Changes..."></textarea>
+        </li>
+
+        <li>
+          Add a comment to a part of your document.<br>
+          <textarea name="q47" placeholder="Explain the process..."></textarea>
+        </li>
+
+        <li>
+          Change the page orientation to Landscape.<br>
+          <textarea name="q48" placeholder="Describe the steps..."></textarea>
+        </li>
+
+        <li>
+          Insert page numbers in your document.<br>
+          <textarea name="q49" placeholder="Explain how you inserted page numbers..."></textarea>
+        </li>
+
+        <li>
+          Save your document as a PDF file.<br>
+          <textarea name="q50" placeholder="Describe how you saved as PDF..."></textarea>
+        </li>
+      </ol>
+
+      <div style="margin-top:16px;">
+        <button type="button" id="submitBtn">Submit</button>
+      </div>
+    </section>
+  </form>
+
+  <footer>&copy; 2025 MS Word Practice Exam</footer>
+        <script src="word.js"></script>
+
+  
+        <script src="exam_script.js"></script>
+
+</body>
+</html>

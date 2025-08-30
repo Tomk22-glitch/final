@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Selection</title>
+ <style>body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+</style>
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>Select an Exam Category</h1>
+
+        <!-- Category Dropdown -->
+        <label for="category">Choose a Category:</label>
+        <select id="category" name="category" onchange="populateExams()">
+            <option value="">--Select a Category--</option>
+            <option value="microsoft">Microsoft Exams</option>
+            <option value="it">IT Exams</option>
+        </select>
+
+        <!-- Exam Dropdown -->
+        <label for="exam">Choose an Exam:</label>
+        <select id="exam" name="exam" disabled>
+            <option value="">--Select an Exam--</option>
+        </select>
+
+        <!-- Exam Button -->
+        <button id="startExamButton" disabled onclick="startExam()">Start Exam</button>
+    </div>
+
+    <script>// Populate the exams based on selected category
+function populateExams() {
+    const category = document.getElementById("category").value;
+    const examDropdown = document.getElementById("exam");
+    const startExamButton = document.getElementById("startExamButton");
+
+    // Clear previous exam options
+    examDropdown.innerHTML = '<option value="">--Select an Exam--</option>';
+
+    // Enable the exam dropdown
+    examDropdown.disabled = false;
+
+    // Depending on the category, add the corresponding exams
+    if (category === "microsoft") {
+        const exams = ["Microsoft Word Exam", "Microsoft Excel Exam", "Microsoft PowerPoint Exam", "Microsoft Publisher Exam"];
+        exams.forEach(exam => {
+            const option = document.createElement("option");
+            option.value = exam.toLowerCase().replace(/\s+/g, '-');
+            option.textContent = exam;
+            examDropdown.appendChild(option);
+        });
+    } else if (category === "it") {
+        const exams = ["internet Exam", "Cybersecurity Exam",];
+        exams.forEach(exam => {
+            const option = document.createElement("option");
+            option.value = exam.toLowerCase().replace(/\s+/g, '-');
+            option.textContent = exam;
+            examDropdown.appendChild(option);
+        });
+    } else {
+        examDropdown.disabled = true; // Disable if no category is selected
+        startExamButton.disabled = true;
+    }
+
+    // Enable the start exam button once an exam is selected
+    examDropdown.addEventListener("change", function() {
+        startExamButton.disabled = !examDropdown.value;
+    });
+}
+
+// Redirect to the exam page
+function startExam() {
+    const selectedExam = document.getElementById("exam").value;
+    
+    // Construct the redirect URL based on the selected exam
+    let examPage = "";
+    switch (selectedExam) {
+        case "microsoft-word-exam":
+            examPage = "word.html";
+            break;
+        case "microsoft-excel-exam":
+            examPage = "excel.html";
+            break;
+        case "microsoft-powerpoint-exam":
+            examPage = "powerpoint.html";
+            break;
+             case "microsoft-publisher-exam":
+            examPage = "publisher.html";
+            break;
+        case "internet-exam":
+            examPage = "internet.html";
+            break;
+        case "cybersecurity-exam":
+            examPage = "cybersecurity.html";
+            break;
+        default:
+            alert("No exam selected.");
+            return;
+    }
+
+    // Redirect to the corresponding exam page
+    window.location.href = examPage;
+}
+</script>
+</body>
+</html>

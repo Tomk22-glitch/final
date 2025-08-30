@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MS Excel 50-Question Exam</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.8;
+      margin: 0 auto;
+      padding: 50px 20px;
+      max-width: 950px;
+      background: #e6f4ea;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2d572c;
+      border-bottom: 3px solid #27ae60;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #111111;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-left: 30px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
+      transition: all 0.6s ease-out;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    label { display:block; margin:6px 0; }
+    textarea { width:100%; min-height:80px; padding:8px; border-radius:6px; border:1px solid #ccc; }
+    input[type="text"] { width:100%; padding:10px; border-radius:6px; border:1px solid #ccc; }
+
+    button {
+      margin: 15px 8px;
+      padding: 12px 24px;
+      background: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-size: larger;
+    }
+
+    button:hover { background:#2ecc71 }
+
+    .confirmation { display:none; background:#dff0d8; border:1px solid #3c763d; padding:20px; border-radius:8px; color:#3c763d; font-weight:bold; text-align:center; margin:30px 0; }
+
+    footer { text-align:center; color:#555; font-size:0.9em; margin:60px 0 20px; }
+
+    @media(max-width:600px){ body{padding:15px} }
+
+
+      #timer {
+            position: fixed; /* Fixes the timer position on the screen */
+            top: 20px; /* Aligns the timer 20px from the top */
+            right: 20px; /* Aligns the timer 20px from the right */
+            font-size: 1.5em;
+            text-align: center;
+            font-weight: bold;
+            color: #d32f2f;
+            background-color: #ffebee;
+            padding: 10px;
+            border-radius: 8px;
+            z-index: 1000; /* Ensures the timer is on top of other elements */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+  </style>
+</head>
+<body>
+  <h1>MS Excel 50-Question Exam</h1>
+
+ <div id="timer">Time Remaining: 35:00</div>
+
+  <section>
+    <h2>Student Information</h2>
+    <label for="studentName">Your Name:</label>
+    <input type="text" id="studentName" name="studentName" placeholder="Enter your full name">
+  </section>
+
+  <section>
+    <h2>Section A — Multiple Choice (1–30)</h2>
+    <form id="mcqForm">
+
+      <div>
+        <p><strong>1. Which symbol starts a formula in Excel?</strong></p>
+        <label><input type="radio" name="q1" value="a"> = (equals)</label>
+        <label><input type="radio" name="q1" value="b"> + (plus)</label>
+        <label><input type="radio" name="q1" value="c"> $ (dollar)</label>
+        <label><input type="radio" name="q1" value="d"> % (percent)</label>
+      </div>
+
+      <div>
+        <p><strong>2. What does =SUM(A1:A5) do?</strong></p>
+        <label><input type="radio" name="q2" value="a"> Multiplies the cells</label>
+        <label><input type="radio" name="q2" value="b"> Adds the cells</label>
+        <label><input type="radio" name="q2" value="c"> Counts the cells</label>
+        <label><input type="radio" name="q2" value="d"> Finds the average</label>
+      </div>
+
+      <div>
+        <p><strong>3. Shortcut to copy selected cells?</strong></p>
+        <label><input type="radio" name="q3" value="a"> Ctrl + C</label>
+        <label><input type="radio" name="q3" value="b"> Ctrl + X</label>
+        <label><input type="radio" name="q3" value="c"> Ctrl + V</label>
+        <label><input type="radio" name="q3" value="d"> Ctrl + Z</label>
+      </div>
+
+      <div>
+        <p><strong>4. Which tab contains Chart insertion options?</strong></p>
+        <label><input type="radio" name="q4" value="a"> Home</label>
+        <label><input type="radio" name="q4" value="b"> Insert</label>
+        <label><input type="radio" name="q4" value="c"> Data</label>
+        <label><input type="radio" name="q4" value="d"> View</label>
+      </div>
+
+      <div>
+        <p><strong>5. Ctrl + Z performs which action?</strong></p>
+        <label><input type="radio" name="q5" value="a"> Redo</label>
+        <label><input type="radio" name="q5" value="b"> Undo</label>
+        <label><input type="radio" name="q5" value="c"> Save</label>
+        <label><input type="radio" name="q5" value="d"> Cut</label>
+      </div>
+
+      <div>
+        <p><strong>6. What is the Fill Handle used for?</strong></p>
+        <label><input type="radio" name="q6" value="a"> Deleting cells</label>
+        <label><input type="radio" name="q6" value="b"> Copying or filling series</label>
+        <label><input type="radio" name="q6" value="c"> Changing cell color</label>
+        <label><input type="radio" name="q6" value="d"> Merging cells</label>
+      </div>
+
+      <div>
+        <p><strong>7. A cell address like B3 refers to:</strong></p>
+        <label><input type="radio" name="q7" value="a"> Row then column</label>
+        <label><input type="radio" name="q7" value="b"> Column then row</label>
+        <label><input type="radio" name="q7" value="c"> Sheet then cell</label>
+        <label><input type="radio" name="q7" value="d"> Workbook then sheet</label>
+      </div>
+
+      <div>
+        <p><strong>8. Which symbol denotes an absolute reference?</strong></p>
+        <label><input type="radio" name="q8" value="a"> #</label>
+        <label><input type="radio" name="q8" value="b"> $</label>
+        <label><input type="radio" name="q8" value="c"> @</label>
+        <label><input type="radio" name="q8" value="d"> &</label>
+      </div>
+
+      <div>
+        <p><strong>9. Which function returns the average of numbers?</strong></p>
+        <label><input type="radio" name="q9" value="a"> COUNT()</label>
+        <label><input type="radio" name="q9" value="b"> SUM()</label>
+        <label><input type="radio" name="q9" value="c"> AVERAGE()</label>
+        <label><input type="radio" name="q9" value="d"> MAX()</label>
+      </div>
+
+      <div>
+        <p><strong>10. IF function is used to:</strong></p>
+        <label><input type="radio" name="q10" value="a"> Format cells</label>
+        <label><input type="radio" name="q10" value="b"> Perform conditional logic</label>
+        <label><input type="radio" name="q10" value="c"> Insert charts</label>
+        <label><input type="radio" name="q10" value="d"> Protect sheet</label>
+      </div>
+
+      <div>
+        <p><strong>11. A PivotTable is primarily used to:</strong></p>
+        <label><input type="radio" name="q11" value="a"> Edit text</label>
+        <label><input type="radio" name="q11" value="b"> Summarize and analyze data</label>
+        <label><input type="radio" name="q11" value="c"> Create macros</label>
+        <label><input type="radio" name="q11" value="d"> Insert images</label>
+      </div>
+
+      <div>
+        <p><strong>12. VLOOKUP searches for a value in:</strong></p>
+        <label><input type="radio" name="q12" value="a"> The rightmost column of a table</label>
+        <label><input type="radio" name="q12" value="b"> Any column randomly</label>
+        <label><input type="radio" name="q12" value="c"> The leftmost column of a table</label>
+        <label><input type="radio" name="q12" value="d"> The header row only</label>
+      </div>
+
+      <div>
+        <p><strong>13. Which operator concatenates text in Excel?</strong></p>
+        <label><input type="radio" name="q13" value="a"> +</label>
+        <label><input type="radio" name="q13" value="b"> &</label>
+        <label><input type="radio" name="q13" value="c"> ^</label>
+        <label><input type="radio" name="q13" value="d"> %</label>
+      </div>
+
+      <div>
+        <p><strong>14. Conditional formatting is used to:</strong></p>
+        <label><input type="radio" name="q14" value="a"> Change formatting based on rules</label>
+        <label><input type="radio" name="q14" value="b"> Insert formulas</label>
+        <label><input type="radio" name="q14" value="c"> Protect workbook</label>
+        <label><input type="radio" name="q14" value="d"> Add new sheets</label>
+      </div>
+
+      <div>
+        <p><strong>15. Freeze Panes is used to:</strong></p>
+        <label><input type="radio" name="q15" value="a"> Keep rows/columns visible while scrolling</label>
+        <label><input type="radio" name="q15" value="b"> Lock the workbook</label>
+        <label><input type="radio" name="q15" value="c"> Hide formulas</label>
+        <label><input type="radio" name="q15" value="d"> Merge cells</label>
+      </div>
+
+      <div>
+        <p><strong>16. Default Excel workbook extension is:</strong></p>
+        <label><input type="radio" name="q16" value="a"> .docx</label>
+        <label><input type="radio" name="q16" value="b"> .xlsx</label>
+        <label><input type="radio" name="q16" value="c"> .pptx</label>
+        <label><input type="radio" name="q16" value="d"> .txt</label>
+      </div>
+
+      <div>
+        <p><strong>17. Shortcut to insert a new worksheet?</strong></p>
+        <label><input type="radio" name="q17" value="a"> Ctrl + N</label>
+        <label><input type="radio" name="q17" value="b"> Shift + F11</label>
+        <label><input type="radio" name="q17" value="c"> Alt + F4</label>
+        <label><input type="radio" name="q17" value="d"> Ctrl + S</label>
+      </div>
+
+      <div>
+        <p><strong>18. Shortcut to save workbook?</strong></p>
+        <label><input type="radio" name="q18" value="a"> Ctrl + P</label>
+        <label><input type="radio" name="q18" value="b"> Ctrl + S</label>
+        <label><input type="radio" name="q18" value="c"> Ctrl + O</label>
+        <label><input type="radio" name="q18" value="d"> Ctrl + W</label>
+      </div>
+
+      <div>
+        <p><strong>19. What is a cell range?</strong></p>
+        <label><input type="radio" name="q19" value="a"> A single cell</label>
+        <label><input type="radio" name="q19" value="b"> A set of contiguous cells</label>
+        <label><input type="radio" name="q19" value="c"> A whole worksheet</label>
+        <label><input type="radio" name="q19" value="d"> A chart area</label>
+      </div>
+
+      <div>
+        <p><strong>20. COUNTIF function is used to:</strong></p>
+        <label><input type="radio" name="q20" value="a"> Sum numbers with criteria</label>
+        <label><input type="radio" name="q20" value="b"> Count cells that meet a condition</label>
+        <label><input type="radio" name="q20" value="c"> Find average with criteria</label>
+        <label><input type="radio" name="q20" value="d"> Concatenate text</label>
+      </div>
+
+      <div>
+        <p><strong>21. SUMIF function does what?</strong></p>
+        <label><input type="radio" name="q21" value="a"> Counts cells with criteria</label>
+        <label><input type="radio" name="q21" value="b"> Sums cells that meet criteria</label>
+        <label><input type="radio" name="q21" value="c"> Looks up values</label>
+        <label><input type="radio" name="q21" value="d"> Splits text</label>
+      </div>
+
+      <div>
+        <p><strong>22. Best chart type for showing trend over time?</strong></p>
+        <label><input type="radio" name="q22" value="a"> Pie chart</label>
+        <label><input type="radio" name="q22" value="b"> Column chart</label>
+        <label><input type="radio" name="q22" value="c"> Line chart</label>
+        <label><input type="radio" name="q22" value="d"> Scatter chart</label>
+      </div>
+
+      <div>
+        <p><strong>23. Data Validation is used to:</strong></p>
+        <label><input type="radio" name="q23" value="a"> Restrict what can be entered in cells</label>
+        <label><input type="radio" name="q23" value="b"> Sort data</label>
+        <label><input type="radio" name="q23" value="c"> Create pivot tables</label>
+        <label><input type="radio" name="q23" value="d"> Protect workbook</label>
+      </div>
+
+      <div>
+        <p><strong>24. Which function returns today's date?</strong></p>
+        <label><input type="radio" name="q24" value="a"> NOW()</label>
+        <label><input type="radio" name="q24" value="b"> DATE()</label>
+        <label><input type="radio" name="q24" value="c"> TODAY()</label>
+        <label><input type="radio" name="q24" value="d"> TIME()</label>
+      </div>
+
+      <div>
+        <p><strong>25. MAX() function returns:</strong></p>
+        <label><input type="radio" name="q25" value="a"> Smallest number</label>
+        <label><input type="radio" name="q25" value="b"> Average</label>
+        <label><input type="radio" name="q25" value="c"> Largest number</label>
+        <label><input type="radio" name="q25" value="d"> Count of numbers</label>
+      </div>
+
+      <div>
+        <p><strong>26. MIN() function returns:</strong></p>
+        <label><input type="radio" name="q26" value="a"> Largest number</label>
+        <label><input type="radio" name="q26" value="b"> Smallest number</label>
+        <label><input type="radio" name="q26" value="c"> Median</label>
+        <label><input type="radio" name="q26" value="d"> Mode</label>
+      </div>
+
+      <div>
+        <p><strong>27. The Name Box is used to:</strong></p>
+        <label><input type="radio" name="q27" value="a"> Show current cell address and name ranges</label>
+        <label><input type="radio" name="q27" value="b"> Enter formulas</label>
+        <label><input type="radio" name="q27" value="c"> Format cells</label>
+        <label><input type="radio" name="q27" value="d"> Create macros</label>
+      </div>
+
+      <div>
+        <p><strong>28. Text to Columns feature is used to:</strong></p>
+        <label><input type="radio" name="q28" value="a"> Merge cells</label>
+        <label><input type="radio" name="q28" value="b"> Split data in one column into multiple columns</label>
+        <label><input type="radio" name="q28" value="c"> Convert text to uppercase</label>
+        <label><input type="radio" name="q28" value="d"> Create charts</label>
+      </div>
+
+      <div>
+        <p><strong>29. Filter in Excel allows you to:</strong></p>
+        <label><input type="radio" name="q29" value="a"> Hide rows permanently</label>
+        <label><input type="radio" name="q29" value="b"> Display only rows that meet criteria</label>
+        <label><input type="radio" name="q29" value="c"> Protect worksheet</label>
+        <label><input type="radio" name="q29" value="d"> Sort data alphabetically only</label>
+      </div>
+
+      <div>
+        <p><strong>30. Protect Sheet is used to:</strong></p>
+        <label><input type="radio" name="q30" value="a"> Prevent changes to the sheet except where unlocked</label>
+        <label><input type="radio" name="q30" value="b"> Backup the workbook</label>
+        <label><input type="radio" name="q30" value="c"> Encrypt the workbook</label>
+        <label><input type="radio" name="q30" value="d"> Print the sheet</label>
+      </div>
+
+    </form>
+  </section>
+
+  <section>
+    <h2>Section B — Written (31–50)</h2>
+    <form id="writtenForm">
+
+      <div>
+        <p><strong>31. Explain the difference between relative and absolute cell references.</strong></p>
+        <textarea name="q31"></textarea>
+      </div>
+
+      <div>
+        <p><strong>32. Describe how VLOOKUP works and give an example.</strong></p>
+        <textarea name="q32"></textarea>
+      </div>
+
+      <div>
+        <p><strong>33. What is a PivotTable and when would you use one?</strong></p>
+        <textarea name="q33"></textarea>
+      </div>
+
+      <div>
+        <p><strong>34. Explain how to apply conditional formatting to highlight values above a threshold.</strong></p>
+        <textarea name="q34"></textarea>
+      </div>
+
+      <div>
+        <p><strong>35. How do you protect certain cells while allowing others to be edited?</strong></p>
+        <textarea name="q35"></textarea>
+      </div>
+
+      <div>
+        <p><strong>36. Describe how to create a chart from a data range.</strong></p>
+        <textarea name="q36"></textarea>
+      </div>
+
+      <div>
+        <p><strong>37. Explain how to remove duplicate rows from a dataset.</strong></p>
+        <textarea name="q37"></textarea>
+      </div>
+
+      <div>
+        <p><strong>38. How can you split full names into first and last name using Excel tools?</strong></p>
+        <textarea name="q38"></textarea>
+      </div>
+
+      <div>
+        <p><strong>39. Describe how to use Data Validation to create a dropdown list.</strong></p>
+        <textarea name="q39"></textarea>
+      </div>
+
+      <div>
+        <p><strong>40. Explain the purpose of the TextJOIN or CONCAT function.</strong></p>
+        <textarea name="q40"></textarea>
+      </div>
+
+      <div>
+        <p><strong>41. How do you use the IFERROR function? Provide a short use-case.</strong></p>
+        <textarea name="q41"></textarea>
+      </div>
+
+      <div>
+        <p><strong>42. Explain how to sort data by multiple columns.</strong></p>
+        <textarea name="q42"></textarea>
+      </div>
+
+      <div>
+        <p><strong>43. How would you calculate a percentage change between two columns?</strong></p>
+        <textarea name="q43"></textarea>
+      </div>
+
+      <div>
+        <p><strong>44. Describe how to group rows and create an outline.</strong></p>
+        <textarea name="q44"></textarea>
+      </div>
+
+      <div>
+        <p><strong>45. How do you record a macro and when is it useful?</strong></p>
+        <textarea name="q45"></textarea>
+      </div>
+
+      <div>
+        <p><strong>46. Explain the use of INDEX and MATCH together.</strong></p>
+        <textarea name="q46"></textarea>
+      </div>
+
+      <div>
+        <p><strong>47. How can you import data from a CSV file into Excel?</strong></p>
+        <textarea name="q47"></textarea>
+      </div>
+
+      <div>
+        <p><strong>48. Describe how to create a dynamic named range.</strong></p>
+        <textarea name="q48"></textarea>
+      </div>
+
+      <div>
+        <p><strong>49. How do you use Goal Seek to find an input value?</strong></p>
+        <textarea name="q49"></textarea>
+      </div>
+
+      <div>
+        <p><strong>50. Explain the difference between COUNT, COUNTA, and COUNTIF.</strong></p>
+        <textarea name="q50"></textarea>
+      </div>
+
+    </form>
+  </section>
+
+  <div style="text-align:center;">
+    <button id="checkBtn">Check Answers</button>
+    <button id="submitBtn">Submit All Answers</button>
+  </div>
+
+  <div class="confirmation" id="confirmation">✅ Thank you — your answers were submitted.</div>
+
+  <section>
+    <h2>Results</h2>
+    <p id="result">Scoring not set (no correct answers configured).</p>
+  </section>
+
+  <footer>
+    <p>MS Excel Exam © 2025</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+          <script src="exam_script.js"></script>
+
+</body>
+</html>

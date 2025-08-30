@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity 50-Question Exam</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.8;
+            margin: 0 auto;
+            padding: 50px 20px;
+            max-width: 950px;
+            background: #f0f4f7;
+            color: #2c3e50;
+        }
+        h1 {
+            text-align: center;
+            color: #34495e;
+            border-bottom: 3px solid #2980b9;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+        section {
+            background: #ecf0f1;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+        label { display: block; margin: 6px 0; }
+        textarea { width: 100%; min-height: 80px; padding: 8px; border-radius: 6px; border: 1px solid #ccc; }
+        input[type="text"] { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; }
+        button {
+            margin: 15px 8px;
+            padding: 12px 24px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: larger;
+        }
+        button:hover { background: #2980b9; }
+        .confirmation {
+            display: none;
+            background: #d5e6f3;
+            border: 1px solid #b2d0e7;
+            padding: 20px;
+            border-radius: 8px;
+            color: #2c3e50;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 0;
+            font-size: 1.2em;
+        }
+        #timer {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5em;
+            text-align: center;
+            font-weight: bold;
+            color: #d32f2f;
+            background-color: #ffebee;
+            padding: 10px;
+            border-radius: 8px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cybersecurity 50-Question Exam</h1>
+
+    <div id="timer">Time Remaining: 35:00</div>
+
+    <section>
+        <h2>Student Information</h2>
+        <label for="studentName">Your Name:</label>
+        <input type="text" id="studentName" name="studentName" placeholder="Enter your full name">
+    </section>
+
+    <section>
+        <h2>Section A — Beginner Level (1–30)</h2>
+        <form id="examForm">
+            <div>
+                <p><strong>1. What is the primary purpose of an antivirus program?</strong></p>
+                <label><input type="radio" name="q1" value="a"> To speed up your computer</label>
+                <label><input type="radio" name="q1" value="b"> To detect, prevent, and remove malicious software</label>
+                <label><input type="radio" name="q1" value="c"> To block pop-up ads</label>
+                <label><input type="radio" name="q1" value="d"> To organize your files</label>
+            </div>
+            <div>
+                <p><strong>2. What is "Phishing"?</strong></p>
+                <label><input type="radio" name="q2" value="a"> A type of computer virus</label>
+                <label><input type="radio" name="q2" value="b"> The act of creating a strong password</label>
+                <label><input type="radio" name="q2" value="c"> The fraudulent practice of tricking people into giving up sensitive information</label>
+                <label><input type="radio" name="q2" value="d"> A type of network cable</label>
+            </div>
+            <div>
+                <p><strong>3. Which of the following is an example of a "strong password"?</strong></p>
+                <label><input type="radio" name="q3" value="a"> password123</label>
+                <label><input type="radio" name="q3" value="b"> MyName1990</label>
+                <label><input type="radio" name="q3" value="c"> !Passw0rd-Strong?</label>
+                <label><input type="radio" name="q3" value="d"> 123456</label>
+            </div>
+            <div>
+                <p><strong>4. What is a "firewall"?</strong></p>
+                <label><input type="radio" name="q4" value="a"> A security system that controls incoming and outgoing network traffic</label>
+                <label><input type="radio" name="q4" value="b"> A tool for burning CDs</label>
+                <label><input type="radio" name="q4" value="c"> A program that backs up your files</label>
+                <label><input type="radio" name="q4" value="d"> A type of web browser</label>
+            </div>
+            <div>
+                <p><strong>5. What is "malware"?</strong></p>
+                <label><input type="radio" name="q5" value="a"> A program that cleans your computer</label>
+                <label><input type="radio" name="q5" value="b"> Software designed to cause damage to a computer or network</label>
+                <label><input type="radio" name="q5" value="c"> A type of hardware device</label>
+                <label><input type="radio" name="q5" value="d"> A security protocol for secure websites</label>
+            </div>
+            <div>
+                <p><strong>6. The "S" in `HTTPS` stands for what?</strong></p>
+                <label><input type="radio" name="q6" value="a"> Simple</label>
+                <label><input type="radio" name="q6" value="b"> Safe</label>
+                <label><input type="radio" name="q6" value="c"> Secure</label>
+                <label><input type="radio" name="q6" value="d"> Service</label>
+            </div>
+            <div>
+                <p><strong>7. What is the most important step to take after discovering your password has been stolen?</strong></p>
+                <label><input type="radio" name="q7" value="a"> Delete your email account</label>
+                <label><input type="radio" name="q7" value="b"> Immediately change the compromised password and any others that use it</label>
+                <label><input type="radio" name="q7" value="c"> Run a firewall scan</label>
+                <label><input type="radio" name="q7" value="d"> Turn off your computer</label>
+            </div>
+            <div>
+                <p><strong>8. What is a "ransomware" attack?</strong></p>
+                <label><input type="radio" name="q8" value="a"> A cyberattack that holds your data hostage until a ransom is paid</label>
+                <label><input type="radio" name="q8" value="b"> A type of phishing attack</label>
+                <label><input type="radio" name="q8" value="c"> A way to steal credit card information</label>
+                <label><input type="radio" name="q8" value="d"> A program that speeds up your computer</label>
+            </div>
+            <div>
+                <p><strong>9. Which of the following is a key feature of `two-factor authentication` (2FA)?</strong></p>
+                <label><input type="radio" name="q9" value="a"> It uses only one password</label>
+                <label><input type="radio" name="q9" value="b"> It requires a second form of verification besides the password</label>
+                <label><input type="radio" name="q9" value="c"> It is only used for email accounts</label>
+                <label><input type="radio" name="q9" value="d"> It is a type of antivirus software</label>
+            </div>
+            <div>
+                <p><strong>10. What is "social engineering"?</strong></p>
+                <label><input type="radio" name="q10" value="a"> The process of building new software</label>
+                <label><input type="radio" name="q10" value="b"> The use of deception to manipulate individuals into divulging confidential information</label>
+                <label><input type="radio" name="q10" value="c"> A type of networking equipment</label>
+                <label><input type="radio" name="q10" value="d"> The study of social media trends</label>
+            </div>
+            <div>
+                <p><strong>11. A "Trojan horse" is a type of malware that does what?</strong></p>
+                <label><input type="radio" name="q11" value="a"> Hides inside a legitimate program or file</label>
+                <label><input type="radio" name="q11" value="b"> Replicates itself to infect other files</label>
+                <label><input type="radio" name="q11" value="c"> Locks your computer screen</label>
+                <label><input type="radio" name="q11" value="d"> Sends spam emails</label>
+            </div>
+            <div>
+                <p><strong>12. What is the best practice for handling suspicious email attachments?</strong></p>
+                <label><input type="radio" name="q12" value="a"> Immediately open them to see what they are</label>
+                <label><input type="radio" name="q12" value="b"> Forward them to all your contacts</label>
+                <label><input type="radio" name="q12" value="c"> Do not open them and delete the email immediately</label>
+                <label><input type="radio" name="q12" value="d"> Save them to your desktop</label>
+            </div>
+            <div>
+                <p><strong>13. Which of the following is an example of a "cyberattack"?</strong></p>
+                <label><input type="radio" name="q13" value="a"> Downloading a file from a legitimate website</label>
+                <label><input type="radio" name="q13" value="b"> A Denial-of-Service (DoS) attack</label>
+                <label><input type="radio" name="q13" value="c"> Installing a software update</label>
+                <label><input type="radio" name="q13" value="d"> Browsing the internet</label>
+            </div>
+            <div>
+                <p><strong>14. What does "VPN" stand for?</strong></p>
+                <label><input type="radio" name="q14" value="a"> Very Private Network</label>
+                <label><input type="radio" name="q14" value="b"> Virtual Personal Network</label>
+                <label><input type="radio" name="q14" value="c"> Virtual Private Network</label>
+                <label><input type="radio" name="q14" value="d"> Verified Public Network</label>
+            </div>
+            <div>
+                <p><strong>15. A key benefit of regularly updating software is to:</strong></p>
+                <label><input type="radio" name="q15" value="a"> Change the color of the interface</label>
+                <label><input type="radio" name="q15" value="b"> Fix security vulnerabilities and bugs</label>
+                <label><input type="radio" name="q15" value="c"> Make the software slower</label>
+                <label><input type="radio" name="q15" value="d"> Increase the file size</label>
+            </div>
+            <div>
+                <p><strong>16. What is "data encryption"?</strong></p>
+                <label><input type="radio" name="q16" value="a"> Converting data into a code to prevent unauthorized access</label>
+                <label><input type="radio" name="q16" value="b"> Deleting data from a hard drive</label>
+                <label><input type="radio" name="q16" value="c"> Making a copy of a file</label>
+                <label><input type="radio" name="q16" value="d"> Organizing files in a folder</label>
+            </div>
+            <div>
+                <p><strong>17. Which of the following is a common sign of a malware infection?</strong></p>
+                <label><input type="radio" name="q17" value="a"> Your computer runs faster than usual</label>
+                <label><input type="radio" name="q17" value="b"> Your computer shows a new, custom background image</label>
+                <label><input type="radio" name="q17" value="c"> Frequent pop-up ads and a slow system</label>
+                <label><input type="radio" name="q17" value="d"> The power button is not working</label>
+            </div>
+            <div>
+                <p><strong>18. What is a "cybersecurity analyst"?</strong></p>
+                <label><input type="radio" name="q18" value="a"> Someone who manages social media accounts</label>
+                <label><input type="radio" name="q18" value="b"> A professional who protects an organization's computer systems and networks</label>
+                <label><input type="radio" name="q18" value="c"> A person who writes marketing emails</label>
+                <label><input type="radio" name="q18" value="d"> A person who installs computer hardware</label>
+            </div>
+            <div>
+                <p><strong>19. What does the term "breach" mean in cybersecurity?</strong></p>
+                <label><input type="radio" name="q19" value="a"> A planned security test</label>
+                <label><input type="radio" name="q19" value="b"> The accidental or unauthorized release of secure data</label>
+                <label><input type="radio" name="q19" value="c"> A type of software update</label>
+                <label><input type="radio" name="q19" value="d"> A security policy document</label>
+            </div>
+            <div>
+                <p><strong>20. What is a "worm"?</strong></p>
+                <label><input type="radio" name="q20" value="a"> A type of antivirus software</label>
+                <label><input type="radio" name="q20" value="b"> A standalone malicious program that can self-replicate</label>
+                <label><input type="radio" name="q20" value="c"> A tool for creating diagrams</label>
+                <label><input type="radio" name="q20" value="d"> A password manager</label>
+            </div>
+            <div>
+                <p><strong>21. What is the purpose of a "security patch"?</strong></p>
+                <label><input type="radio" name="q21" value="a"> To change the color scheme of a program</label>
+                <label><input type="radio" name="q21" value="b"> To add new features to a program</label>
+                <label><input type="radio" name="q21" value="c"> To fix a known security vulnerability in software</label>
+                <label><input type="radio" name="q21" value="d"> To uninstall software</label>
+            </div>
+            <div>
+                <p><strong>22. What is a "keylogger"?</strong></p>
+                <label><input type="radio" name="q22" value="a"> A program that logs every keystroke a user makes</label>
+                <label><input type="radio" name="q22" value="b"> A tool for unlocking locked computers</label>
+                <label><input type="radio" name="q22" value="c"> A type of secure keyboard</label>
+                <label><input type="radio" name="q22" value="d"> A device used for creating passwords</label>
+            </div>
+            <div>
+                <p><strong>23. What is the best way to secure your Wi-Fi network?</strong></p>
+                <label><input type="radio" name="q23" value="a"> Leave it open and without a password</label>
+                <label><input type="radio" name="q23" value="b"> Use a weak, simple password</label>
+                <label><input type="radio" name="q23" value="c"> Use a strong password and WPA2/WPA3 encryption</label>
+                <label><input type="radio" name="q23" value="d"> Hide the network name (SSID)</label>
+            </div>
+            <div>
+                <p><strong>24. What is a "botnet"?</strong></p>
+                <label><input type="radio" name="q24" value="a"> A new type of artificial intelligence</label>
+                <label><input type="radio" name="q24" value="b"> A network of compromised computers controlled by a single attacker</label>
+                <label><input type="radio" name="q24" value="c"> A type of gaming console</label>
+                <label><input type="radio" name="q24" value="d"> A tool for managing website traffic</label>
+            </div>
+            <div>
+                <p><strong>25. What is the main goal of a "denial-of-service" (DoS) attack?</strong></p>
+                <label><input type="radio" name="q25" value="a"> To steal user data from a website</label>
+                <label><input type="radio" name="q25" value="b"> To make a network or service unavailable to its intended users</label>
+                <label><input type="radio" name="q25" value="c"> To change the content of a website</label>
+                <label><input type="radio" name="q25" value="d"> To install a virus on a computer</label>
+            </div>
+            <div>
+                <p><strong>26. What does "endpoint security" protect?</strong></p>
+                <label><input type="radio" name="q26" value="a"> The central network server</label>
+                <label><input type="radio" name="q26" value="b"> The Wi-Fi router</label>
+                <label><input type="radio" name="q26" value="c"> Individual devices like computers and smartphones</label>
+                <label><input type="radio" name="q26" value="d"> The company's main website</label>
+            </div>
+            <div>
+                <p><strong>27. What is "identity theft"?</strong></p>
+                <label><input type="radio" name="q27" value="a"> The act of making a new social media profile</label>
+                <label><input type="radio" name="q27" value="b"> The fraudulent use of someone else's personal data for financial gain</label>
+                <label><input type="radio" name="q27" value="c"> Forgetting your password</label>
+                <label><input type="radio" name="q27" value="d"> Downloading an app</label>
+            </div>
+            <div>
+                <p><strong>28. Why is it important to log out of public computers?</strong></p>
+                <label><input type="radio" name="q28" value="a"> To make the computer run faster</label>
+                <label><input type="radio" name="q28" value="b"> To prevent the next user from accessing your accounts and data</label>
+                <label><input type="radio" name="q28" value="c"> To save battery life</label>
+                <label><input type="radio" name="q28" value="d"> To clear the computer's cache</label>
+            </div>
+            <div>
+                <p><strong>29. What is the role of a "security policy"?</strong></p>
+                <label><input type="radio" name="q29" value="a"> It's a legal document for employees to sign</label>
+                <label><input type="radio" name="q29" value="b"> It outlines the rules and procedures for protecting an organization's assets</label>
+                <label><input type="radio" name="q29" value="c"> It is a type of password manager</label>
+                <label><input type="radio" name="q29" value="d"> It is a program that finds computer viruses</label>
+            </div>
+            <div>
+                <p><strong>30. What is "physical security"?</strong></p>
+                <label><input type="radio" name="q30" value="a"> Security that protects against cyberattacks</label>
+                <label><input type="radio" name="q30" value="b"> Measures to protect computer systems from physical access or damage</label>
+                <label><input type="radio" name="q30" value="c"> The security of your email account</label>
+                <label><input type="radio" name="q30" value="d"> A type of data encryption</label>
+            </div>
+        </form>
+    </section>
+    
+    <section>
+        <h2>Section B — Intermediate Level (31–50)</h2>
+        <div>
+            <p><strong>31. Explain how a "phishing" attack works and provide two specific red flags to look for in a suspicious email.</strong></p>
+            <textarea name="q31"></textarea>
+        </div>
+        <div>
+            <p><strong>32. Describe the difference between a "virus" and a "worm" and how they spread differently.</strong></p>
+            <textarea name="q32"></textarea>
+        </div>
+        <div>
+            <p><strong>33. What are the three core principles of the CIA Triad in cybersecurity, and what does each mean?</strong></p>
+            <textarea name="q33"></textarea>
+        </div>
+        <div>
+            <p><strong>34. Explain the concept of "social engineering" and give a real-world example of how it can be used in a cyberattack.</strong></p>
+            <textarea name="q34"></textarea>
+        </div>
+        <div>
+            <p><strong>35. How does a "Virtual Private Network" (VPN) protect your privacy and security when using public Wi-Fi?</strong></p>
+            <textarea name="q35"></textarea>
+        </div>
+        <div>
+            <p><strong>36. Describe the key steps you should take immediately after you realize your computer has been infected with ransomware.</strong></p>
+            <textarea name="q36"></textarea>
+        </div>
+        <div>
+            <p><strong>37. What is "multi-factor authentication" (MFA), and why is it considered more secure than a password alone?</strong></p>
+            <textarea name="q37"></textarea>
+        </div>
+        <div>
+            <p><strong>38. Explain the difference between "vulnerability," "threat," and "risk" in a cybersecurity context.</strong></p>
+            <textarea name="q38"></textarea>
+        </div>
+        <div>
+            <p><strong>39. How do you create and manage a strong, unique password for every online account without forgetting them?</strong></p>
+            <textarea name="q39"></textarea>
+        </div>
+        <div>
+            <p><strong>40. Describe the purpose of a "firewall" and how it works to protect a network.</strong></p>
+            <textarea name="q40"></textarea>
+        </div>
+        <div>
+            <p><strong>41. What is a "Denial-of-Service" (DoS) attack, and how is a "Distributed Denial-of-Service" (DDoS) attack different?</strong></p>
+            <textarea name="q41"></textarea>
+        </div>
+        <div>
+            <p><strong>42. Explain the importance of keeping software and operating systems updated. What are the dangers of not doing so?</strong></p>
+            <textarea name="q42"></textarea>
+        </div>
+        <div>
+            <p><strong>43. What is a "zero-day" exploit? Why is it particularly dangerous?</strong></p>
+            <textarea name="q43"></textarea>
+        </div>
+        <div>
+            <p><strong>44. Describe the concept of "least privilege" and why it's a foundational principle of cybersecurity.</strong></p>
+            <textarea name="q44"></textarea>
+        </div>
+        <div>
+            <p><strong>45. How does "data encryption" work, and what is its role in protecting sensitive information?</strong></p>
+            <textarea name="q45"></textarea>
+        </div>
+        <div>
+            <p><strong>46. Explain the difference between `HTTP` and `HTTPS`. What does the "S" mean, and why is it crucial for online shopping or banking?</strong></p>
+            <textarea name="q46"></textarea>
+        </div>
+        <div>
+            <p><strong>47. What is the purpose of a "security audit," and what are some things an auditor looks for?</strong></p>
+            <textarea name="q47"></textarea>
+        </div>
+        <div>
+            <p><strong>48. Describe the steps you would take to securely dispose of a hard drive containing sensitive personal data.</strong></p>
+            <textarea name="q48"></textarea>
+        </div>
+        <div>
+            <p><strong>49. What is a "digital certificate," and how does it help a user know a website is legitimate?</strong></p>
+            <textarea name="q49"></textarea>
+        </div>
+        <div>
+            <p><strong>50. Explain the concept of "threat hunting" and how it differs from traditional security measures.</strong></p>
+            <textarea name="q50"></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn">Submit Exam</button>
+    </section>
+    
+    <div class="confirmation" id="confirmation">
+        Thank you! Your answers have been submitted successfully.
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="exam_script.js"></script>
+</body>
+</html>
