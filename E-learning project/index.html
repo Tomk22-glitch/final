@@ -207,17 +207,14 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
- p{font-size: small;}
-button{font-size: larger;}
-        
-        
     .lecturer-top img {
       width: 100px;
       height: 100px;
       border-radius: 100%;
       margin-right: 15px;
     }
-
+    p{font-size: small;}
+button{font-size: larger;}
         button {
             background-color: #2563eb;
             color: white;
@@ -232,23 +229,37 @@ button{font-size: larger;}
             background-color: #1e40af;
         }
 
-        @media (max-width: 768px) {
-            .course-grid {
-                grid-template-columns: 1fr;
-            }
+         @media(max-width: 600px) {
+  body {
+    padding: 10px;
+  }
 
-            nav {
-                flex-wrap: wrap;
-            }
+  section {
+    padding: 15px;
+  }
 
-            nav a {
-                margin: 0.25rem;
-            }
+  nav {
+    padding: 15px;
+  }
 
-            .stats {
-                flex-direction: column;
-            }
-        }
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  ul {
+    margin-left: 20px;
+  }
+}
+
     </style>
 
 </head>
@@ -311,8 +322,7 @@ button{font-size: larger;}
                 <h2>Introduction to Computers</h2>
                 <p>Start your computer literacy journey by understanding the fundamental concepts of computing
                     technology.</p>
-               
- <form action="intro/INTRO.html" method="get">
+                <form action="intro/INTRO.html" method="get">
                     <div class="course-grid">
                         <div class="course-card" onclick="selectCourse('Computer Fundamentals')">
                             <img src="intro/intro.jpg">
@@ -326,6 +336,7 @@ button{font-size: larger;}
                             </div>
                         </div>
                 </form>
+
                 
                     <div class="course-card" onclick="selectCourse('Operating Systems')">
                         <img src="osnotes/os.jpg"
@@ -550,9 +561,8 @@ button{font-size: larger;}
                         alt="Video editing timeline showing multiple tracks and preview window">
                     <div class="course-info">
                         <span class="difficulty intermediate">intermediate</span>
-                        <p>Introduction to Premiere Pro and DaVinci Resolve.</p>
-                        <p>Video Editing Basics</p>
-
+                        <p>Introduction to DaVinci Resolve.</p>
+                        <button type="submit">Video Editing</button>
                         <div class="progress-container">
                             <div class="progress-bar" style="width: 10%"></div>
                         </div>
@@ -623,7 +633,7 @@ button{font-size: larger;}
                     <div class="course-info">
                         <span class="difficulty advanced">Advanced</span>
                         <p>Learn HTML coding </p>
-                      <a href="html/html.html"><button type="submit">Html</button></a>
+                        <button type="submit">Html</button>
                         <div class="progress-container">
                             <div class="progress-bar" style="width: 5%"></div>
                         </div>
@@ -778,7 +788,7 @@ button{font-size: larger;}
 
         <section id="exams">
             
-     <a href="exams/exams.html"> <button type="submit" style="margin-bottom: 30px;">Exams</button></a>
+     <a href="exams/login.html"> <button type="submit" style="margin-bottom: 30px;">Exams</button></a>
             
             
 
@@ -790,8 +800,8 @@ button{font-size: larger;}
 
 
     <footer>
-        <p>© 2025 COMPLAB E-LEARNINNG PLATFORM| Created by Tom</p>
-        <p>Contact: info@techlearn.com | Support: support@techlearn.com</p>
+        <p>© 2025 COMPLAB E-LEARNINNG PLATFORM| Created by Thomas Kamande</p>
+        <p>Contact: Msdplab@gmail.com | Support: Msdplab@gmail.com</p>
     </footer>
 
     <script>
@@ -808,12 +818,14 @@ button{font-size: larger;}
                 }
             });
         }
+
+
+
+
+         var _0x23f4=["\x48\x65\x6C\x6C\x6F\x21"];
+    function greet(){alert(_0x23f4[0]);}
     </script>
 
 </body>
 
-
 </html>
-
-
-
