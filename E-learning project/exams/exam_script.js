@@ -3,7 +3,7 @@
 
         const submitBtn = document.getElementById('submitBtn');
         const timerElement = document.getElementById('timer');
-        const minutes = 30;
+        const minutes = 35;
         let timeInSeconds = minutes * 60;
 
         function updateTimer() {
@@ -70,4 +70,5 @@
             clearInterval(timerInterval); // Stop the timer when the user submits early
             submitExam();
         });
+
     
